@@ -1,0 +1,742 @@
+[
+  {
+    "name": "Chicken Bucket",
+    "description": "A bucket of crispy fried chicken pieces with your choice of dips.",
+    "price": 599,
+    "rating": 4.5,
+    "image": "https://images.kfc.com.au/MenuItems/Chicken/Original-Recipe-Bucket-21-Pieces.png",
+    "restaurant": "kfc",
+    "dishId": "khtrjjaw",
+    "timeTaken": 38
+  },
+  {
+    "name": "Zinger Burger",
+    "description": "A spicy chicken fillet with lettuce and mayo in a sesame bun.",
+    "price": 149,
+    "rating": 4.2,
+    "image": "https://images.kfc.com.au/MenuItems/Burgers/Zinger-Burger.png",
+    "restaurant": "kfc",
+    "dishId": "7f1ielie",
+    "timeTaken": 29
+  },
+  {
+    "name": "Hot Wings",
+    "description": "Juicy chicken wings coated in a spicy marinade.",
+    "price": 199,
+    "rating": 4.1,
+    "image": "https://images.kfc.com.au/MenuItems/Chicken/Hot-Wings-6-Pieces.png",
+    "restaurant": "kfc",
+    "dishId": "tv00aiwd",
+    "timeTaken": 12
+  },
+  {
+    "name": "Popcorn Chicken",
+    "description": "Bite-sized pieces of tender chicken with a crunchy coating.",
+    "price": 99,
+    "rating": 4.3,
+    "image": "https://images.kfc.com.au/MenuItems/Snacks/Popcorn-Chicken-Regular.png",
+    "restaurant": "kfc",
+    "dishId": "uahvm2c9",
+    "timeTaken": 38
+  },
+  {
+    "name": "Rice Bowl",
+    "description": "A bowl of steamed rice topped with chicken, gravy and veggies.",
+    "price": 129,
+    "rating": 3.9,
+    "image": "https://images.kfc.com.au/MenuItems/Rice/Rice-Bowl.png",
+    "restaurant": "kfc",
+    "dishId": "91c36g32",
+    "timeTaken": 39
+  },
+  {
+    "name": "Chicken Strips",
+    "description": "Strips of tender chicken with a crispy coating and your choice of dips.",
+    "price": 179,
+    "rating": 4,
+    "image": "https://images.kfc.com.au/MenuItems/Snacks/Chicken-Strips-3-Pieces.png",
+    "restaurant": "kfc",
+    "dishId": "uusjjt6u",
+    "timeTaken": 58
+  },
+  {
+    "name": "Veggie Burger",
+    "description": "A patty of mixed vegetables with lettuce and mayo in a sesame bun.",
+    "price": 99,
+    "rating": 3.8,
+    "image": "https://images.kfc.com.au/MenuItems/Burgers/Veggie-Burger.png",
+    "restaurant": "kfc",
+    "dishId": "9i3harjj",
+    "timeTaken": 36
+  },
+  {
+    "name": "Fries",
+    "description": "Crispy potato fries seasoned with salt and pepper.",
+    "price": 49,
+    "rating": 4.2,
+    "image": "https://images.kfc.com.au/MenuItems/Sides/Fries-Regular.png",
+    "restaurant": "kfc",
+    "dishId": "sstfedmg",
+    "timeTaken": 46
+  },
+  {
+    "name": "Coleslaw",
+    "description": "A creamy salad of shredded cabbage and carrots.",
+    "price": 49,
+    "rating": 3.7,
+    "image": "https://images.kfc.com.au/MenuItems/Sides/Coleslaw-Regular.png",
+    "restaurant": "kfc",
+    "dishId": "l0nta1wb",
+    "timeTaken": 56
+  },
+  {
+    "name": "Chocolate Mousse",
+    "description": "A rich and smooth chocolate dessert topped with whipped cream.",
+    "price": 69,
+    "rating": 4.4,
+    "image": "https://images.kfc.com.au/MenuItems/Desserts/Chocolate-Mousse.png",
+    "restaurant": "kfc",
+    "dishId": "eoxspfe8",
+    "timeTaken": 41
+  },
+  {
+    "name": "Twister Wrap",
+    "description": "A tortilla wrap filled with chicken, lettuce, tomato and mayo.",
+    "price": 149,
+    "rating": 4.1,
+    "image": "https://images.kfc.com.au/MenuItems/Wraps/Twister-Original.png",
+    "restaurant": "kfc",
+    "dishId": "sc3a2ycb",
+    "timeTaken": 53
+  },
+  {
+    "name": "Corn on the Cob",
+    "description": "A roasted corn cob with butter and salt.",
+    "price": 49,
+    "rating": 3.9,
+    "image": "https://images.kfc.com.au/MenuItems/Sides/Corn-on-the-Cob-Regular.png",
+    "restaurant": "kfc",
+    "dishId": "8f14k7lp",
+    "timeTaken": 39
+  },
+  {
+    "name": "Krusher Oreo",
+    "description": "A creamy drink blended with crushed oreo cookies and ice cream.",
+    "price": 99,
+    "rating": 4.3,
+    "image": "https://images.kfc.com.au/MenuItems/Krushers/Krusher-Oreo.png",
+    "restaurant": "kfc",
+    "dishId": "lqcb2rga",
+    "timeTaken": 10
+  },
+  {
+    "name": "Brownie Blast Sundae",
+    "description": "A vanilla ice cream sundae topped with brownie chunks and chocolate sauce.",
+    "price": 79,
+    "rating": 4.5,
+    "image": "https://images.kfc.com.au/MenuItems/Desserts/Brownie-Blast-Sundae.png",
+    "restaurant": "kfc",
+    "dishId": "us5jx9be",
+    "timeTaken": 38
+  },
+  {
+    "name": "Chicken Nuggets",
+    "description": "Bite-sized pieces of chicken with a crispy coating and your choice of dips.",
+    "price": 99,
+    "rating": 4.2,
+    "image": "https://images.kfc.com.au/MenuItems/Snacks/Chicken-Nuggets-6-Pieces.png",
+    "restaurant": "kfc",
+    "dishId": "8807ji3m",
+    "timeTaken": 58
+  },
+  {
+    "name": "Margherita Pizza",
+    "description": "A classic pizza with tomato sauce, mozzarella cheese and basil.",
+    "price": 199,
+    "rating": 4.1,
+    "image": "https://www.pizzahut.co.in/images/menu/margherita.jpg",
+    "restaurant": "pizza hut",
+    "dishId": "m4becjdk",
+    "timeTaken": 20
+  },
+  {
+    "name": "Peppy Paneer Pizza",
+    "description": "A pizza with paneer, capsicum, red paprika and spicy tomato sauce.",
+    "price": 299,
+    "rating": 4.3,
+    "image": "https://www.pizzahut.co.in/images/menu/peppy-paneer.jpg",
+    "restaurant": "pizza hut",
+    "dishId": "hsl4wfy8",
+    "timeTaken": 33
+  },
+  {
+    "name": "Chicken Tikka Pizza",
+    "description": "A pizza with chicken tikka, onion, capsicum and tikka sauce.",
+    "price": 349,
+    "rating": 4.2,
+    "image": "https://www.pizzahut.co.in/images/menu/chicken-tikka.jpg",
+    "restaurant": "pizza hut",
+    "dishId": "elks55ed",
+    "timeTaken": 49
+  },
+  {
+    "name": "Veggie Supreme Pizza",
+    "description": "A pizza with onion, capsicum, mushroom, corn, tomato and cheese.",
+    "price": 399,
+    "rating": 4,
+    "image": "https://www.pizzahut.co.in/images/menu/veggie-supreme.jpg",
+    "restaurant": "pizza hut",
+    "dishId": "ybhnexc4",
+    "timeTaken": 30
+  },
+  {
+    "name": "Triple Chicken Feast Pizza",
+    "description": "A pizza with chicken sausage, chicken keema and chicken tikka.",
+    "price": 449,
+    "rating": 4.4,
+    "image": "https://www.pizzahut.co.in/images/menu/triple-chicken-feast.jpg",
+    "restaurant": "pizza hut",
+    "dishId": "rjuz4psy",
+    "timeTaken": 53
+  },
+  {
+    "name": "Garlic Bread Sticks",
+    "description": "Soft bread sticks topped with garlic and butter.",
+    "price": 99,
+    "rating": 4.1,
+    "image": "https://www.pizzahut.co.in/images/menu/garlic-bread-sticks.jpg",
+    "restaurant": "pizza hut",
+    "dishId": "z5ky7ehu",
+    "timeTaken": 38
+  },
+  {
+    "name": "Cheese Garlic Bread",
+    "description": "Soft bread topped with cheese and garlic.",
+    "price": 129,
+    "rating": 4.3,
+    "image": "https://www.pizzahut.co.in/images/menu/cheese-garlic-bread.jpg",
+    "restaurant": "pizza hut",
+    "dishId": "f4he9kh2",
+    "timeTaken": 54
+  },
+  {
+    "name": "Pasta Italiano White",
+    "description": "Penne pasta in a creamy white sauce with veggies.",
+    "price": 199,
+    "rating": 3.9,
+    "image": "https://www.pizzahut.co.in/images/menu/pasta-italiano-white.jpg",
+    "restaurant": "pizza hut",
+    "dishId": "q7b54te2",
+    "timeTaken": 47
+  },
+  {
+    "name": "Pasta Italiano Red",
+    "description": "Penne pasta in a spicy tomato sauce with veggies.",
+    "price": 199,
+    "rating": 3.8,
+    "image": "https://www.pizzahut.co.in/images/menu/pasta-italiano-red.jpg",
+    "restaurant": "pizza hut",
+    "dishId": "i5rui22p",
+    "timeTaken": 26
+  },
+  {
+    "name": "Choco Volcano Cake",
+    "description": "A warm chocolate cake with a gooey center.",
+    "price": 99,
+    "rating": 4.5,
+    "image": "https://www.pizzahut.co.in/images/menu/choco-volcano-cake.jpg",
+    "restaurant": "pizza hut",
+    "dishId": "aerx56be",
+    "timeTaken": 19
+  },
+  {
+    "name": "Country Feast Pizza",
+    "description": "A pizza with onion, capsicum, mushroom, sweet corn and cheese.",
+    "price": 299,
+    "rating": 4.1,
+    "image": "https://www.pizzahut.co.in/images/menu/country-feast.jpg",
+    "restaurant": "pizza hut",
+    "dishId": "hy5vebis",
+    "timeTaken": 37
+  },
+  {
+    "name": "Cheese Burst Pizza",
+    "description": "A pizza with a layer of liquid cheese in the crust and your choice of toppings.",
+    "price": 299,
+    "rating": 4.5,
+    "image": "https://www.dominos.co.in/files/items/Cheese_Burst.jpg",
+    "restaurant": "dominos",
+    "dishId": "pdcbgjbu",
+    "timeTaken": 49
+  },
+  {
+    "name": "Farmhouse Pizza",
+    "description": "A pizza with onion, capsicum, mushroom and cheese.",
+    "price": 249,
+    "rating": 4.2,
+    "image": "https://www.dominos.co.in/files/items/Farmhouse.jpg",
+    "restaurant": "dominos",
+    "dishId": "l466v9kl",
+    "timeTaken": 41
+  },
+  {
+    "name": "Pepper Barbecue Chicken Pizza",
+    "description": "A pizza with chicken, onion and barbecue sauce.",
+    "price": 299,
+    "rating": 4.3,
+    "image": "https://www.dominos.co.in/files/items/Pepper_Barbeque.jpg",
+    "restaurant": "dominos",
+    "dishId": "9tf7kkxo",
+    "timeTaken": 31
+  },
+  {
+    "name": "Indi Tandoori Paneer Pizza",
+    "description": "A pizza with paneer, onion, capsicum and tandoori sauce.",
+    "price": 299,
+    "rating": 4.1,
+    "image": "https://www.dominos.co.in/files/items/Indi_Tandoori_Paneer.jpg",
+    "restaurant": "dominos",
+    "dishId": "aapvh9j5",
+    "timeTaken": 60
+  },
+  {
+    "name": "Mexican Green Wave Pizza",
+    "description": "A pizza with onion, capsicum, tomato, jalapeno and cheese.",
+    "price": 249,
+    "rating": 4,
+    "image": "https://www.dominos.co.in/files/items/Mexican_Green_Wave.jpg",
+    "restaurant": "dominos",
+    "dishId": "hzmvvsqi",
+    "timeTaken": 22
+  },
+  {
+    "name": "Garlic Breadsticks",
+    "description": "Crispy breadsticks topped with garlic and butter.",
+    "price": 99,
+    "rating": 4.2,
+    "image": "https://www.dominos.co.in/files/items/Garlic_Breadsticks.jpg",
+    "restaurant": "dominos",
+    "dishId": "2zfsy17j",
+    "timeTaken": 46
+  },
+  {
+    "name": "Cheesy Garlic Breadsticks",
+    "description": "Crispy breadsticks topped with cheese, garlic and butter.",
+    "price": 129,
+    "rating": 4.4,
+    "image": "https://www.dominos.co.in/files/items/Cheesy_Garlic_Breadsticks.jpg",
+    "restaurant": "dominos",
+    "dishId": "oif1vfrg",
+    "timeTaken": 27
+  },
+  {
+    "name": "White Pasta Italiano Veg",
+    "description": "Penne pasta in a creamy white sauce with broccoli, corn and cheese.",
+    "price": 179,
+    "rating": 3.9,
+    "image": "https://www.dominos.co.in/files/items/White_Pasta_Italiano_Veg.jpg",
+    "restaurant": "dominos",
+    "dishId": "6sop4xac",
+    "timeTaken": 26
+  },
+  {
+    "name": "Red Pasta Italiano Non Veg",
+    "description": "Penne pasta in a spicy tomato sauce with chicken and cheese.",
+    "price": 199,
+    "rating": 3.8,
+    "image": "https://www.dominos.co.in/files/items/Red_Pasta_Italiano_Non_Veg.jpg",
+    "restaurant": "dominos",
+    "dishId": "5ftt8ueo",
+    "timeTaken": 60
+  },
+  {
+    "name": "Butterscotch Mousse Cake",
+    "description": "A soft cake with a layer of butterscotch mousse and caramel.",
+    "price": 99,
+    "rating": 4.5,
+    "image": "https://www.dominos.co.in/files/items/Butterscotch_Mousse_Cake.jpg",
+    "restaurant": "dominos",
+    "dishId": "tiezjjkz",
+    "timeTaken": 31
+  },
+  {
+    "name": "Veg Kebab Platter",
+    "description": "A platter of assorted grilled vegetables marinated in spices and sauces.",
+    "price": 399,
+    "rating": 4.2,
+    "image": "https://bncdn.akamaized.net/Custom/Thumb/0x0/assets/img/app-images/veg-kebab-platter.png",
+    "restaurant": "barbeque nation",
+    "dishId": "0pggands",
+    "timeTaken": 28
+  },
+  {
+    "name": "Non Veg Kebab Platter",
+    "description": "A platter of assorted grilled chicken, mutton and fish marinated in spices and sauces.",
+    "price": 499,
+    "rating": 4.4,
+    "image": "https://bncdn.akamaized.net/Custom/Thumb/0x0/assets/img/app-images/non-veg-kebab-platter.png",
+    "restaurant": "barbeque nation",
+    "dishId": "594zrscm",
+    "timeTaken": 20
+  },
+  {
+    "name": "Paneer Tikka Masala",
+    "description": "Cubes of paneer cooked in a rich and creamy tomato gravy.",
+    "price": 249,
+    "rating": 4.1,
+    "image": "https://bncdn.akamaized.net/Custom/Thumb/0x0/assets/img/app-images/paneer-tikka-masala.png",
+    "restaurant": "barbeque nation",
+    "dishId": "s3zoz5nm",
+    "timeTaken": 20
+  },
+  {
+    "name": "Butter Chicken",
+    "description": "Tender pieces of chicken cooked in a buttery and tangy tomato gravy.",
+    "price": 299,
+    "rating": 4.3,
+    "image": "https://bncdn.akamaized.net/Custom/Thumb/0x0/assets/img/app-images/butter-chicken.png",
+    "restaurant": "barbeque nation",
+    "dishId": "jxpanyjq",
+    "timeTaken": 52
+  },
+  {
+    "name": "Dal Makhani",
+    "description": "Black lentils cooked with butter and cream.",
+    "price": 199,
+    "rating": 4,
+    "image": "https://bncdn.akamaized.net/Custom/Thumb/0x0/assets/img/app-images/dal-makhani.png",
+    "restaurant": "barbeque nation",
+    "dishId": "h7iycnwa",
+    "timeTaken": 15
+  },
+  {
+    "name": "Veg Biryani",
+    "description": "Aromatic rice cooked with vegetables and spices.",
+    "price": 199,
+    "rating": 3.9,
+    "image": "https://bncdn.akamaized.net/Custom/Thumb/0x0/assets/img/app-images/veg-biryani.png",
+    "restaurant": "barbeque nation",
+    "dishId": "hh0egp7c",
+    "timeTaken": 44
+  },
+  {
+    "name": "Chicken Biryani",
+    "description": "Aromatic rice cooked with chicken and spices.",
+    "price": 249,
+    "rating": 4.2,
+    "image": "https://bncdn.akamaized.net/Custom/Thumb/0x0/assets/img/app-images/chicken-biryani.png",
+    "restaurant": "barbeque nation",
+    "dishId": "9s7tzemg",
+    "timeTaken": 15
+  },
+  {
+    "name": "Gulab Jamun",
+    "description": "Deep-fried balls of milk solids soaked in sugar syrup.",
+    "price": 99,
+    "rating": 4.4,
+    "image": "https://bncdn.akamaized.net/Custom/Thumb/0x0/assets/img/app-images/gulab-jamun.png",
+    "restaurant": "barbeque nation",
+    "dishId": "0y6cpyhg",
+    "timeTaken": 37
+  },
+  {
+    "name": "Kulfi",
+    "description": "A frozen dessert made with milk and nuts.",
+    "price": 99,
+    "rating": 4.5,
+    "image": "https://bncdn.akamaized.net/Custom/Thumb/0x0/assets/img/app-images/kulfi.png",
+    "restaurant": "barbeque nation",
+    "dishId": "ezqd5wsk",
+    "timeTaken": 33
+  },
+  {
+    "name": "Brownie with Ice Cream",
+    "description": "A warm chocolate brownie served with vanilla ice cream.",
+    "price": 149,
+    "rating": 4.6,
+    "image": "https://bncdn.akamaized.net/Custom/Thumb/0x0/assets/img/app-images/brownie-with-ice-cream.png",
+    "restaurant": "barbeque nation",
+    "dishId": "taxxrr0i",
+    "timeTaken": 35
+  },
+  {
+    "name": "Idli Sambar",
+    "description": "Steamed rice cakes served with a spicy lentil and vegetable stew.",
+    "price": 49,
+    "rating": 4.1,
+    "image": "https://www.kaverirestaurant.com/wp-content/uploads/sites/2/ngg_featured/idli-sambar.jpg",
+    "restaurant": "kaveri",
+    "dishId": "r14ezcub",
+    "timeTaken": 58
+  },
+  {
+    "name": "Masala Dosa",
+    "description": "A thin and crispy rice crepe stuffed with spiced potato masala.",
+    "price": 79,
+    "rating": 4.3,
+    "image": "https://www.kaverirestaurant.com/wp-content/uploads/sites/2/ngg_featured/masala-dosa.jpg",
+    "restaurant": "kaveri",
+    "dishId": "f2bc6ztq",
+    "timeTaken": 31
+  },
+  {
+    "name": "Vada Sambar",
+    "description": "Deep-fried lentil fritters served with a spicy lentil and vegetable stew.",
+    "price": 59,
+    "rating": 4.2,
+    "image": "https://www.kaverirestaurant.com/wp-content/uploads/sites/2/ngg_featured/vada-sambar.jpg",
+    "restaurant": "kaveri",
+    "dishId": "9zj96hww",
+    "timeTaken": 60
+  },
+  {
+    "name": "Uttapam",
+    "description": "A thick and soft rice pancake topped with onion, tomato and green chillies.",
+    "price": 69,
+    "rating": 4,
+    "image": "https://www.kaverirestaurant.com/wp-content/uploads/sites/2/ngg_featured/onion-uttapam.jpg",
+    "restaurant": "kaveri",
+    "dishId": "ye4zvfs9",
+    "timeTaken": 17
+  },
+  {
+    "name": "Rava Dosa",
+    "description": "A thin and crispy semolina crepe with onion and green chillies.",
+    "price": 89,
+    "rating": 4.1,
+    "image": "https://www.kaverirestaurant.com/wp-content/uploads/sites/2/ngg_featured/rava-dosa.jpg",
+    "restaurant": "kaveri",
+    "dishId": "wjcim8l7",
+    "timeTaken": 60
+  },
+  {
+    "name": "Pongal",
+    "description": "A savoury rice and lentil porridge flavoured with cumin and pepper.",
+    "price": 49,
+    "rating": 3.9,
+    "image": "https://www.kaverirestaurant.com/wp-content/uploads/sites/2/ngg_featured/pongal.jpg",
+    "restaurant": "kaveri",
+    "dishId": "5u1qhq45",
+    "timeTaken": 18
+  },
+  {
+    "name": "Upma",
+    "description": "A savoury semolina dish cooked with onion, tomato and green peas.",
+    "price": 39,
+    "rating": 3.8,
+    "image": "https://www.kaverirestaurant.com/wp-content/uploads/sites/2/ngg_featured/upma.jpg",
+    "restaurant": "kaveri",
+    "dishId": "qbkeplvt",
+    "timeTaken": 17
+  },
+  {
+    "name": "Lemon Rice",
+    "description": "A tangy rice dish flavoured with lemon juice, mustard seeds and curry leaves.",
+    "price": 59,
+    "rating": 4,
+    "image": "https://www.kaverirestaurant.com/wp-content/uploads/sites/2/ngg_featured/lemon-rice.jpg",
+    "restaurant": "kaveri",
+    "dishId": "jcf9pboi",
+    "timeTaken": 15
+  },
+  {
+    "name": "Curd Rice",
+    "description": "A simple rice dish mixed with yogurt and tempered with mustard seeds and curry leaves.",
+    "price": 49,
+    "rating": 3.9,
+    "image": "https://www.kaverirestaurant.com/wp-content/uploads/sites/2/ngg_featured/curd-rice.jpg",
+    "restaurant": "kaveri",
+    "dishId": "5uub5m0l",
+    "timeTaken": 58
+  },
+  {
+    "name": "Big Mac",
+    "description": "Two beef patties, special sauce, lettuce, cheese, pickles and onions on a sesame seed bun.",
+    "price": 199,
+    "rating": 4.5,
+    "restaurant": "McDonald's",
+    "image": "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/meal/desktop/h-mcdonalds-Big-Mac-Extra-Value-Meals.jpg",
+    "dishId": "h39gg6yh",
+    "timeTaken": 48
+  },
+  {
+    "name": "Chicken McNuggets",
+    "description": "Crispy chicken bites with your choice of dipping sauce.",
+    "price": 149,
+    "rating": 4.2,
+    "restaurant": "McDonald's",
+    "image": "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/meal/desktop/h-mcdonalds-Chicken-McNuggets-10-piece-Extra-Value-Meals.jpg",
+    "dishId": "51d728hf",
+    "timeTaken": 34
+  },
+  {
+    "name": "McAloo Tikki Burger",
+    "description": "A potato and peas patty with tomato, onion, lettuce and special sauce in a bun.",
+    "price": 59,
+    "rating": 4,
+    "restaurant": "McDonald's",
+    "image": "https://www.mcdonalds.com/is/image/content/dam/india/nfl/web/nutrition/products/mcaloo-tikki-burger.png",
+    "dishId": "arsqy4od",
+    "timeTaken": 21
+  },
+  {
+    "name": "McVeggie Burger",
+    "description": "A vegetable patty with cheese, tomato, lettuce and mayo in a bun.",
+    "price": 89,
+    "rating": 3.8,
+    "restaurant": "McDonald's",
+    "image": "https://www.mcdonalds.com/is/image/content/dam/india/nfl/web/nutrition/products/mcveggie-burger.png",
+    "dishId": "13u28ejr",
+    "timeTaken": 50
+  },
+  {
+    "name": "McFlurry Oreo",
+    "description": "Soft serve ice cream with crushed Oreo cookies.",
+    "price": 99,
+    "rating": 4.7,
+    "restaurant": "McDonald's",
+    "image": "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/meal/desktop/h-mcdonalds-McFlurry-with-OREO-Cookies-Regular.jpg",
+    "dishId": "wpnxopb9",
+    "timeTaken": 57
+  },
+  {
+    "name": "McSpicy Paneer Burger",
+    "description": "A spicy paneer patty with cheese, lettuce and creamy habanero sauce in a bun.",
+    "price": 119,
+    "rating": 4.3,
+    "restaurant": "McDonald's",
+    "image": "https://www.mcdonalds.com/is/image/content/dam/india/nfl/web/nutrition/products/mcspicy-paneer-burger.png",
+    "dishId": "doixwwc5",
+    "timeTaken": 24
+  },
+  {
+    "name": "McCafe Cappuccino",
+    "description": "A hot beverage made with espresso and steamed milk, topped with foam.",
+    "price": 109,
+    "rating": 4.1,
+    "restaurant": "McDonald's",
+    "image": "https://www.mcdonalds.com/is/image/content/dam/india/nfl/web/nutrition/products/cappuccino.png",
+    "dishId": "sscvznm7",
+    "timeTaken": 10
+  },
+  {
+    "name": "McChicken Burger",
+    "description": "A chicken patty with lettuce and mayo in a bun.",
+    "price": 109,
+    "rating": 4.2,
+    "restaurant": "McDonald's",
+    "image": "https://www.mcdonalds.com/is/image/content/dam/india/nfl/web/nutrition/products/mcchicken-burger.png",
+    "dishId": "66le340v",
+    "timeTaken": 58
+  },
+  {
+    "name": "French Fries",
+    "description": "Crispy potato sticks with salt.",
+    "price": 49,
+    "rating": 4.6,
+    "restaurant": "McDonald's",
+    "image": "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/meal/desktop/h-mcdonalds-French-Fries-Small-Medium.jpg",
+    "dishId": "lmr15d6m",
+    "timeTaken": 35
+  },
+  {
+    "name": "Chole Bhature",
+    "description": "A spicy and tangy chickpea curry served with fluffy fried bread",
+    "price": 120,
+    "rating": 4.5,
+    "image": "https://www.haldirams.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/h/chole_bhature_1.jpg",
+    "restaurant": "Haldiram",
+    "dishId": "iqzw8x56",
+    "timeTaken": 18
+  },
+  {
+    "name": "Dahi Vada",
+    "description": "Soft and spongy lentil dumplings soaked in creamy yogurt and topped with sweet and spicy chutneys",
+    "price": 80,
+    "rating": 4.2,
+    "image": "https://www.haldirams.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/d/a/dahi_vada_1.jpg",
+    "restaurant": "Haldiram",
+    "dishId": "2u3x8gjn",
+    "timeTaken": 26
+  },
+  {
+    "name": "Paneer Tikka",
+    "description": "Cubes of cottage cheese marinated in yogurt and spices and grilled to perfection",
+    "price": 180,
+    "rating": 4.7,
+    "image": "https://www.haldirams.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/p/a/paneer_tikka_1.jpg",
+    "restaurant": "Haldiram",
+    "dishId": "w005f7ac",
+    "timeTaken": 37
+  },
+  {
+    "name": "Samosa",
+    "description": "A crispy and flaky pastry stuffed with spiced potatoes and peas",
+    "price": 20,
+    "rating": 4.3,
+    "image": "https://www.haldirams.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/s/a/samosa_1.jpg",
+    "restaurant": "Haldiram",
+    "dishId": "069id1a6",
+    "timeTaken": 27
+  },
+  {
+    "name": "Dal Makhani",
+    "description": "A rich and creamy lentil dish cooked with butter and cream",
+    "price": 160,
+    "rating": 4.6,
+    "image": "https://www.haldirams.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/d/a/dal_makhani_1.jpg",
+    "restaurant": "Haldiram",
+    "dishId": "oinbmlli",
+    "timeTaken": 50
+  },
+  {
+    "name": "Naan",
+    "description": "A soft and fluffy flatbread baked in a clay oven",
+    "price": 40,
+    "rating": 4.4,
+    "image": "https://www.haldirams.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/n/a/naan_1.jpg",
+    "restaurant": "Haldiram",
+    "dishId": "cx6gbxni",
+    "timeTaken": 15
+  },
+  {
+    "name": "Gulab Jamun",
+    "description": "A sweet and spongy dessert made of milk solids and soaked in sugar syrup",
+    "price": 60,
+    "rating": 4.8,
+    "image": "https://www.haldirams.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/g/u/gulab_jamun_1.jpg",
+    "restaurant": "Haldiram",
+    "dishId": "a5n238vx",
+    "timeTaken": 12
+  },
+  {
+    "name": "Raj Kachori",
+    "description": "A crispy and hollow puri filled with various toppings and chutneys",
+    "price": "100",
+    "rating": "4.5",
+    "image": "https://www.haldirams.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/r/a/raj_kachori_1.jpg",
+    "restaurant": "Haldiram",
+    "dishId": "t78py0v7",
+    "timeTaken": 27
+  },
+  {
+    "name": "Pav Bhaji",
+    "description": "A spicy and buttery vegetable mash served with soft bread rolls",
+    "price": "140",
+    "rating": "4.6",
+    "image": "https://www.haldirams.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/p/a/pav_bhaji_1.jpg",
+    "restaurant": "Haldiram",
+    "dishId": "t4wjd2mh",
+    "timeTaken": 26
+  },
+  {
+    "name": "Kulfi",
+    "description": "A frozen and creamy dessert made of milk and nuts",
+    "price": "80",
+    "rating": "4.7",
+    "image": "https://www.haldirams.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/k/u/kulfi_1.jpg",
+    "restaurant": "Haldiram",
+    "dishId": "p1psoxtj",
+    "timeTaken": 41
+  }
+]
