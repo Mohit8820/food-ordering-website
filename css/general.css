@@ -75,7 +75,8 @@ section {
   margin: 10rem auto 0;
 }
 
-button {
+button,
+input[type="submit"] {
   border: none;
   box-shadow: rgba(0, 0, 0, 0.3) 0.2rem 0.2rem 1.4rem;
   background-color: var(--highlight-color);
@@ -367,6 +368,12 @@ ul button {
   color: var(--primary-color);
   font-weight: 600;
   letter-spacing: 0.25rem;
+}
+.cart-btn {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
 }
 /******************footer****************/
 footer {
