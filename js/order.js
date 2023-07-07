@@ -1,7 +1,4 @@
-import { currentUserIndex } from "./auth.js";
-var users;
-var curUser;
-console.log(currentUserIndex());
+import { currentUserIndex, getUsers } from "./auth.js";
 
 //one modal whose body changes as per button click
 //same for toast
@@ -65,7 +62,7 @@ function appendDishes(dishes) {
           <div class="price">₹${dish.price}</div>
           <button data-id="${
             dish.dishId
-          }" onclick="addDish(event);">Add</button>
+          }" onclick="addDish(event);" class="primary-btn">Add</button>
         </div>
       </div>`;
   });
@@ -82,13 +79,107 @@ function searchDish() {
 }
 
 export function addDish(e) {
-  // check for log in
   var dishId = e.target.getAttribute("data-id");
   var dish = menu.find((dish) => dish.dishId == dishId);
   console.log(dish);
+  var users = getUsers();
+  var curUser = currentUserIndex(users);
+  if (curUser >= 0) {
+    var dishInd = users[curUser].cart.dishes.findIndex((d) => d === dishId);
+    if (dishInd >= 0) {
+      users[curUser].cart.quantity[dishInd]++;
+    } else {
+      users[curUser].cart.dishes.push(dishId);
+      users[curUser].cart.quantity.push(1);
+    }
+    localStorage.setItem("tastyExUsers", JSON.stringify(users));
+  } else {
+    alert("Please Login.");
+  }
+}
+export function updateDish(action, id) {
+  console.log(action);
+  var users = getUsers();
+  var curUser = currentUserIndex(users);
+  const i = users[curUser].cart.dishes.indexOf(id);
+  var q = users[curUser].cart.quantity[i];
+  if (action === "inc") {
+    if (q <= 10) users[curUser].cart.quantity[i]++;
+    else alert("Can't order more than 10 units of same item.");
+  } else {
+    if (q > 1) users[curUser].cart.quantity[i]--;
+    else if (q === 1) {
+      removeDish(id);
+      return;
+    } else alert("Error");
+  }
+  localStorage.setItem("tastyExUsers", JSON.stringify(users));
+  loadCart();
+}
+export function removeDish(id) {
+  var users = getUsers();
+  var curUser = currentUserIndex(users);
+  const index = users[curUser].cart.dishes.indexOf(id);
+  if (index > -1) {
+    // only splice array when item is found
+    users[curUser].cart.dishes.splice(index, 1);
+    users[curUser].cart.quantity.splice(index, 1);
+  } else {
+    alert("dish not in cart");
+  }
+  localStorage.setItem("tastyExUsers", JSON.stringify(users));
+  loadCart();
 }
 function loadCart() {
   // check for log in
+  var users = getUsers();
+  var curUser = currentUserIndex(users);
+  var cartCont = document.getElementById("cart-dish-container");
+  if (curUser >= 0) {
+    cartCont.innerHTML = "";
+    users[curUser].cart.dishes.forEach((dishId, i) => {
+      var dish = menu.find((d) => d.dishId === dishId);
+      cartCont.innerHTML +=
+        `
+      <div class="cart-dish">
+      <div class="cart-dish-img">
+        <img
+          src="https://www.dominos.co.in/files/items/Pepper_Barbeque.jpg"
+          alt=""
+        />
+      </div>
+      <div class="cart-dish-col-2">
+        <p>${dish.name}</p>
+        <div class="one-price sub-title">₹ ${dish.price}</div>
+      </div>
+      <div class="cart-dish-col-3">
+     <div class="quantity-editor"> 
+     <ion-icon name="remove-outline" class="sec-btn"  onclick="updateDish(\`` +
+        "dec" +
+        `\`,\`` +
+        dishId +
+        `\`);"></ion-icon>
+     <div class="dish-quantity">${users[curUser].cart.quantity[i]}</div>
+     <ion-icon name="add-outline"  class="sec-btn" onclick="updateDish(\`` +
+        "inc" +
+        `\`,\`` +
+        dishId +
+        `\`);"></ion-icon>
+       </div>
+        <div class="price">₹ ${
+          users[curUser].cart.quantity[i] * dish.price
+        }</div>
+      </div>
+        <button class="del-dish-btn sec-btn"  onclick="removeDish(\`` +
+        dishId +
+        `\`);">
+          <ion-icon name="trash-outline"></ion-icon>
+        </button>
+    </div>`;
+    });
+  } else {
+    alert("Please Login.");
+  }
   console.log("load");
 }
 document.addEventListener("DOMContentLoaded", function () {

@@ -42,8 +42,8 @@ export function getUsers() {
   return JSON.parse(localStorage.getItem("tastyExUsers")) || [];
 }
 
-export function currentUserIndex() {
-  const users = getUsers();
+export function currentUserIndex(users) {
+  console.log(users);
   if (users.length > 0) {
     var ind = users.findIndex((user) => user.isLoggedIn == true);
     return ind;
@@ -140,7 +140,7 @@ function loginFunc() {
 function logoutFunc() {
   console.log("logged out");
   var users = getUsers();
-  users[currentUserIndex()].isLoggedIn = false;
+  users[currentUserIndex(users)].isLoggedIn = false;
   localStorage.setItem("tastyExUsers", JSON.stringify(users));
   toggleLogoutbtn("logout");
 }
@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
   autoPopulateCities();
   logoutBtn.addEventListener("click", logoutFunc);
   if (localStorage) {
-    if (currentUserIndex() >= 0) {
+    if (currentUserIndex(getUsers()) >= 0) {
       toggleLogoutbtn("login");
     }
   } else {

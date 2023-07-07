@@ -479,14 +479,18 @@
           </button>
           <button
             type="button"
-            class="col-auto"
+            class="col-auto primary-btn"
             data-bs-toggle="modal"
             data-bs-target="#signupModal"
             id="signup-btn"
           >
             Sign-up
           </button>
-          <button type="button" class="col-auto d-none" id="logout-btn">
+          <button
+            type="button"
+            class="col-auto primary-btn d-none"
+            id="logout-btn"
+          >
             Log Out
           </button>
         </div>
@@ -533,7 +537,9 @@
               <div class="carousel-caption text-start mb-5">
                 <h1>Hungry?</h1>
                 <p>Order food from your favourite restaurants.</p>
-                <a class="" href="#"><button>Let's begin</button></a>
+                <a class="" href="#"
+                  ><button class="primary-btn">Let's begin</button></a
+                >
               </div>
             </div>
           </div>
@@ -544,7 +550,9 @@
               <div class="carousel-caption mb-5">
                 <h1>Discover</h1>
                 <p>the best food & drinks</p>
-                <a class="" href="#"><button>Explore</button></a>
+                <a class="" href="#"
+                  ><button class="primary-btn">Explore</button></a
+                >
               </div>
             </div>
           </div>
@@ -555,7 +563,9 @@
               <div class="carousel-caption text-end mb-5">
                 <h1>Order Online</h1>
                 <p>Stay home and order to your doorstep</p>
-                <a class="" href="#"><button>Order now</button></a>
+                <a class="" href="#"
+                  ><button class="primary-btn">Order now</button></a
+                >
               </div>
             </div>
           </div>
@@ -625,13 +635,13 @@
       <div class="rest-sec">
         <div id="rest-list"></div>
         <button
-          class="scroll-btn scroll-btn-left"
+          class="primary-btn scroll-btn scroll-btn-left"
           onclick="function scrollLeft(){restContainer.scrollLeft += 200;};scrollLeft();"
         >
           >
         </button>
         <button
-          class="scroll-btn scroll-btn-right"
+          class="primary-btn scroll-btn scroll-btn-right"
           onclick="function scrollRight(){restContainer.scrollLeft -= 200;};scrollRight();"
         >
           <
@@ -645,28 +655,32 @@
         id="dish-search-box"
       />
       <div id="dish-list"></div>
-      <div class="dish">
-        <div class="dish-img">
+      <div class="cart-dish row align-items-center">
+        <div class="cart-dish-img">
           <img
             src="https://www.dominos.co.in/files/items/Pepper_Barbeque.jpg"
             alt=""
           />
-          <div class="rating">
-            3.5
-            <ion-icon name="star" aria-hidden="true"></ion-icon>
-          </div>
         </div>
-        <h4>Pepper Barbecue Chicken Pizza</h4>
-        <p>A pizza with chicken, onion and barbecue sauce.</p>
-        <div class="dish-footer">
+        <div class="col">
+          <h4>title</h4>
+          <div class="one-price sub-title">₹600</div>
+        </div>
+        <div class="cart-dish-price col">
+          <div class="quantity-editor">2</div>
           <div class="price">₹300</div>
-          <button>Add</button>
+        </div>
+        <div class="col">
+          <button class="sec-btn">
+            <ion-icon name="trash-outline"></ion-icon>
+          </button>
         </div>
       </div>
     </section>
 
     <button
       id="cart-btn"
+      class="primary-btn"
       type="button"
       data-bs-toggle="offcanvas"
       data-bs-target="#offcanvasRight"
@@ -682,7 +696,10 @@
       aria-labelledby="offcanvasRightLabel"
     >
       <div class="offcanvas-header">
-        <div class="offcanvas-title sub-title" id="offcanvasRightLabel">
+        <div
+          class="offcanvas-title w-100 sub-title text-center"
+          id="offcanvasRightLabel"
+        >
           Cart
         </div>
         <button
@@ -692,7 +709,9 @@
           aria-label="Close"
         ></button>
       </div>
-      <div class="offcanvas-body cart-body">...</div>
+      <div class="offcanvas-body cart-body" id="cart-body">
+        <div id="cart-dish-container"></div>
+      </div>
     </div>
 
     <footer class="footer-area py-5">
@@ -852,133 +871,15 @@
         </div>
       </div>
     </footer>
-    <!-- <script type="text/javascript">
-      var menu;
-      var filterMenu;
-      fetch("menu.json")
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          console.log(data);
-          menu = data;
-          filterMenu = data;
-          appendDishes(data);
-        })
-        .catch(function (err) {
-          console.log("error: " + err);
-        });
 
-      let restaurantNames = [
-        "all",
-        "kfc",
-        "haldiram",
-        "kaveri",
-        "dominos",
-        "pizza hut",
-        "barbeque nation",
-        "mcdonald's",
-      ];
-      let restaurantImages = [
-        "all.gif",
-        "kfc.avif",
-        "haldiram.png",
-        "kaveri.avif",
-        "dominos.avif",
-        "pizzahut.avif",
-        "bbq.png",
-        "McDonalds.png",
-      ];
-      let restContainer = document.getElementById("rest-list");
-      restaurantNames.forEach((rest, i) => {
-        restContainer.innerHTML += `<div class="restaurant">
-          <div class="rest-img ${i == 0 && "active-rest"}">
-            <img src="./img/restaurants/${restaurantImages[i]}" alt="${
-          restaurantImages[i]
-        }" />
-          </div>
-          <h4 class="center-text">${restaurantNames[i]}</h4>
-        </div>`;
-      });
-
-      let restaurants = document.querySelectorAll(".restaurant");
-      restaurants.forEach((restaurant, index) => {
-        restaurant.addEventListener(
-          "click",
-          function handleRestaurantClick(event) {
-            for (const rest of document.querySelectorAll("div.active-rest")) {
-              rest.classList.remove("active-rest");
-            }
-            restaurant
-              .getElementsByClassName("rest-img")[0]
-              .classList.add("active-rest");
-            filterDishes(index);
-          }
-        );
-      });
-
-      function filterDishes(i) {
-        if (restaurantNames[i] == "all") {
-          filterMenu = menu;
-          // appendDishes(menu);
-        } else {
-          filterMenu = menu.filter(function (dish) {
-            return (
-              dish.restaurant.toLowerCase() == restaurantNames[i].toLowerCase()
-            );
-          });
-          // appendDishes(filterMenu);
-        }
-        searchDish();
-      }
-
-      let dishContainer = document.getElementById("dish-list");
-      function appendDishes(dishes) {
-        dishContainer.innerHTML = "";
-        dishes.forEach((dish, i) => {
-          var id = dish.dishId;
-          dishContainer.innerHTML += `
-      <div class="dish">
-        <div class="dish-img">
-          <img
-            src="${"img/gallery/gallery-" + ((i + 1) % 12)}.jpg"
-            alt="dish-image"
-          />
-          <div class="rating">
-            ${dish.rating}
-            <ion-icon name="star" aria-hidden="true"></ion-icon>
-          </div>
-        </div>
-        <h4>${dish.name}</h4>
-        <p>${dish.description}</p>
-        <div class="dish-footer">
-          <div class="price">₹${dish.price}</div>
-          <button data-id="${
-            dish.dishId
-          }" onclick="addDish(event);">Add</button>
-        </div>
-      </div>`;
-        });
-      }
-      function searchDish() {
-        let searchedText = document.getElementById("dish-search-box").value;
-        if (searchedText === "") appendDishes(filterMenu);
-        else {
-          searchedMenu = filterMenu.filter(function (dish) {
-            return (
-              dish.name.toLowerCase().indexOf(searchedText.toLowerCase()) !== -1
-            );
-          });
-          appendDishes(searchedMenu);
-        }
-      }
-    </script> -->
     <script>
       let restContainer = document.getElementById("rest-list");
     </script>
     <script type="module">
-      import { addDish } from "./js/order.js";
+      import { addDish, removeDish, updateDish } from "./js/order.js";
       window.addDish = addDish;
+      window.removeDish = removeDish;
+      window.updateDish = updateDish;
     </script>
     <script type="module" src="./js/auth.js"></script>
     <script type="module" src="./js/order.js"></script>
