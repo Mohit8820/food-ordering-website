@@ -384,9 +384,9 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">
+            <h3 class="sub-title" id="locationModalLabel">
               Locations where delivery is available :
-            </h1>
+            </h3>
             <button
               type="button"
               class="btn-close"
@@ -401,16 +401,120 @@
               height="480"
             ></iframe>
           </div>
-          <!-- <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="orderModal"
+      tabindex="-1"
+      aria-labelledby="orderModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="sub-title" id="orderModalLabel">Place order</h3>
             <button
               type="button"
-              class="btn btn-secondary"
+              id="close-order-modal"
+              class="btn-close"
               data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h4 class="text-center">Bill Summary</h4>
+            <table>
+              <tr>
+                <th>Subtotal</th>
+                <td id="subtotal"></td>
+              </tr>
+              <tr>
+                <td>Delivery Charges</td>
+                <td id="del-charge">15</td>
+              </tr>
+              <tr>
+                <th>Total</th>
+                <th id="total-charge"></th>
+              </tr>
+            </table>
+            <h4 class="text-center">Delivery Address</h4>
+            <table id="address-table"></table>
+            <h4 class="text-center">Estimated Time</h4>
+            <table>
+              <tr>
+                <th>Meal preparation</th>
+                <td id="meal-time"></td>
+              </tr>
+              <tr>
+                <th>Delivery</th>
+                <td id="del-time">15</td>
+              </tr>
+              <tr>
+                <th>Total</th>
+                <th id="total-time"></th>
+              </tr>
+            </table>
+            <p class="text-center">Only cash on delivery accepted.</p>
+            <button
+              class="primary-btn"
+              id="confirm-btn"
+              data-bs-toggle="modal"
+              data-bs-target="#successModal"
             >
-              Close
+              Confirm Order
             </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="successModal"
+      tabindex="-1"
+      aria-labelledby="successModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="sub-title" id="successModalLabel">Order Complete</h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="success-img">
+              <img src="./img/success.gif" alt="" />
+            </div>
+            <h4 class="text-center text-warning mb-5">
+              Your order has been confirmed.
+            </h4>
+            <h4 class="text-center">Order Summary</h4>
+            <table>
+              <tr>
+                <td>Order number :</td>
+                <th id="order-no"></th>
+              </tr>
+              <tr>
+                <td>Payment mode :</td>
+                <th>Cash On Delivery</th>
+              </tr>
+              <tr>
+                <td>Delivery within :</td>
+                <th id="order-time"></th>
+              </tr>
+            </table>
+            <h4 class="text-center text-success">Thank You</h4>
+            <button class="primary-btn" onclick="window.location.reload()">
+              Home
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -655,27 +759,6 @@
         id="dish-search-box"
       />
       <div id="dish-list"></div>
-      <div class="cart-dish row align-items-center">
-        <div class="cart-dish-img">
-          <img
-            src="https://www.dominos.co.in/files/items/Pepper_Barbeque.jpg"
-            alt=""
-          />
-        </div>
-        <div class="col">
-          <h4>title</h4>
-          <div class="one-price sub-title">₹600</div>
-        </div>
-        <div class="cart-dish-price col">
-          <div class="quantity-editor">2</div>
-          <div class="price">₹300</div>
-        </div>
-        <div class="col">
-          <button class="sec-btn">
-            <ion-icon name="trash-outline"></ion-icon>
-          </button>
-        </div>
-      </div>
     </section>
 
     <button
@@ -686,7 +769,7 @@
       data-bs-target="#offcanvasRight"
       aria-controls="offcanvasRight"
     >
-      Cart
+      <ion-icon name="cart-outline"></ion-icon>
     </button>
 
     <div
@@ -710,7 +793,17 @@
         ></button>
       </div>
       <div class="offcanvas-body cart-body" id="cart-body">
-        <div id="cart-dish-container"></div>
+        <div id="cart-dish-container">No item found.</div>
+        <div class="checkout primary-btn">
+          <div id="total-order">₹ <span id="total-order-price">000</span></div>
+          <button
+            id="checkout-btn"
+            data-bs-toggle="modal"
+            data-bs-target="#orderModal"
+          >
+            Place Order <ion-icon name="caret-forward-outline"></ion-icon>
+          </button>
+        </div>
       </div>
     </div>
 

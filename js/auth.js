@@ -43,7 +43,6 @@ export function getUsers() {
 }
 
 export function currentUserIndex(users) {
-  console.log(users);
   if (users.length > 0) {
     var ind = users.findIndex((user) => user.isLoggedIn == true);
     return ind;

@@ -3,6 +3,32 @@ import { currentUserIndex, getUsers } from "./auth.js";
 //one modal whose body changes as per button click
 //same for toast
 //off canvas backdrop
+function convertToHrsMins(num) {
+  if (isNaN(num)) {
+    return "Error calculating";
+  }
+  num = Math.floor(num);
+  let hrs = Math.floor(num / 60);
+  let mins = num % 60;
+  let output = "";
+  if (hrs > 0) {
+    output += hrs + " hr";
+    if (hrs > 1) {
+      output += "s";
+    }
+    if (mins > 0) {
+      output += " ";
+    }
+  }
+  if (mins > 0) {
+    output += mins + " min";
+    if (mins > 1) {
+      output += "s";
+    }
+  }
+  return output;
+}
+
 var menu;
 var filterMenu;
 
@@ -104,7 +130,7 @@ export function updateDish(action, id) {
   const i = users[curUser].cart.dishes.indexOf(id);
   var q = users[curUser].cart.quantity[i];
   if (action === "inc") {
-    if (q <= 10) users[curUser].cart.quantity[i]++;
+    if (q < 10) users[curUser].cart.quantity[i]++;
     else alert("Can't order more than 10 units of same item.");
   } else {
     if (q > 1) users[curUser].cart.quantity[i]--;
@@ -136,6 +162,12 @@ function loadCart() {
   var curUser = currentUserIndex(users);
   var cartCont = document.getElementById("cart-dish-container");
   if (curUser >= 0) {
+    if (users[curUser].cart.dishes.length < 1) {
+      cartCont.innerHTML = "No item found.";
+      document.getElementById("checkout-btn").disabled = true;
+      return;
+    }
+    var total = 0;
     cartCont.innerHTML = "";
     users[curUser].cart.dishes.forEach((dishId, i) => {
       var dish = menu.find((d) => d.dishId === dishId);
@@ -176,12 +208,63 @@ function loadCart() {
           <ion-icon name="trash-outline"></ion-icon>
         </button>
     </div>`;
+      total = total + users[curUser].cart.quantity[i] * dish.price;
     });
+    document.getElementById("checkout-btn").disabled = false;
+    document.getElementById("total-order-price").innerHTML = total;
   } else {
     alert("Please Login.");
+    cartCont.innerHTML = "No item found.";
+    document.getElementById("checkout-btn").disabled = true;
   }
   console.log("load");
 }
+
+function checkout() {
+  var users = getUsers();
+  var curUser = currentUserIndex(users);
+  var mealtime = 0;
+  var orderRestaurants = new Set();
+  users[curUser].cart.dishes.forEach((dishId, i) => {
+    var dish = menu.find((d) => d.dishId === dishId);
+    mealtime = Math.max(mealtime, dish.timeTaken);
+    orderRestaurants.add(dish.restaurant);
+  });
+  var subtotal = parseFloat(
+    document.getElementById("total-order-price").innerHTML
+  );
+  var delch = orderRestaurants.size * 7;
+  var totalch = delch + subtotal;
+  document.getElementById("subtotal").innerHTML = "₹ " + subtotal;
+  document.getElementById("del-charge").innerHTML = "₹ " + delch;
+  document.getElementById("total-charge").innerHTML = "₹ " + totalch;
+  document.getElementById("address-table").innerHTML = `<tr>
+  <td>${users[curUser].add1}</td>
+</tr>
+<tr>
+  <td>${users[curUser].add2}</td>
+</tr>
+<tr>
+  <th>${users[curUser].city}, ${users[curUser].state}</th>
+</tr>`;
+
+  var deltime = orderRestaurants.size * 10;
+  var totaltime = deltime + mealtime;
+  document.getElementById("meal-time").innerHTML = convertToHrsMins(mealtime);
+  document.getElementById("del-time").innerHTML = convertToHrsMins(deltime);
+  document.getElementById("total-time").innerHTML = convertToHrsMins(totaltime);
+}
+function successFunc() {
+  console.log("cld");
+  document.getElementById("order-no").innerHTML = Math.random()
+    .toString()
+    .slice(2, 12);
+  document.getElementById("order-time").innerHTML =
+    document.getElementById("total-time").innerHTML;
+  var users = getUsers();
+  var curUser = currentUserIndex(users);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   fetch("menu.json")
     .then(function (response) {
@@ -223,4 +306,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("dish-search-box")
     .addEventListener("keyup", searchDish);
   document.getElementById("cart-btn").addEventListener("click", loadCart);
+  document.getElementById("checkout-btn").addEventListener("click", checkout);
+  document.getElementById("confirm-btn").addEventListener("click", successFunc);
 });
