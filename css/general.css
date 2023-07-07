@@ -369,11 +369,12 @@ ul button {
   font-weight: 600;
   letter-spacing: 0.25rem;
 }
-.cart-btn {
+#cart-btn {
   position: fixed;
   top: 50%;
   right: 0;
   transform: translate(0, -50%);
+  z-index: 99;
 }
 /******************footer****************/
 footer {

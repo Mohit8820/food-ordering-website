@@ -486,12 +486,7 @@
           >
             Sign-up
           </button>
-          <button
-            type="button"
-            class="col-auto d-none"
-            id="logout-btn"
-            onclick="logoutFunc();"
-          >
+          <button type="button" class="col-auto d-none" id="logout-btn">
             Log Out
           </button>
         </div>
@@ -647,7 +642,6 @@
         class="search-bar mb-3 mb-lg-5 text-center"
         placeholder="Search dish..."
         aria-label="Search"
-        onkeyup="searchDish()"
         id="dish-search-box"
       />
       <div id="dish-list"></div>
@@ -672,12 +666,11 @@
     </section>
 
     <button
-      class="cart-btn"
+      id="cart-btn"
       type="button"
       data-bs-toggle="offcanvas"
       data-bs-target="#offcanvasRight"
       aria-controls="offcanvasRight"
-      onclick="loadCart()"
     >
       Cart
     </button>
@@ -980,6 +973,13 @@
         }
       }
     </script> -->
+    <script>
+      let restContainer = document.getElementById("rest-list");
+    </script>
+    <script type="module">
+      import { addDish } from "./js/order.js";
+      window.addDish = addDish;
+    </script>
     <script type="module" src="./js/auth.js"></script>
     <script type="module" src="./js/order.js"></script>
     <script

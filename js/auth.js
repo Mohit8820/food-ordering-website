@@ -14,7 +14,7 @@ const cityList = {
     "West Delhi",
   ],
 };
-var users;
+var logoutBtn = document.getElementById("logout-btn");
 
 /*************populating cities********* */
 function autoPopulateCities() {
@@ -38,19 +38,12 @@ function autoPopulateCities() {
 }
 /*************populating cities********* */
 
-function getUsers() {
-  if (localStorage) {
-    if (!localStorage.tastyExUsers) {
-      localStorage.setItem("tastyExUsers", JSON.stringify([]));
-    }
-    users = JSON.parse(localStorage.getItem("tastyExUsers"));
-  } else {
-    alert("Unsupported browser.");
-  }
-  console.log(users);
+export function getUsers() {
+  return JSON.parse(localStorage.getItem("tastyExUsers")) || [];
 }
 
-function currentUserIndex() {
+export function currentUserIndex() {
+  const users = getUsers();
   if (users.length > 0) {
     var ind = users.findIndex((user) => user.isLoggedIn == true);
     return ind;
@@ -112,6 +105,7 @@ function signupFunc() {
     cart: { dishes: [], quantity: [] },
     prevOrders: [],
   };
+  var users = getUsers();
   const checkEmail = users.some((u) => user.email === u.email);
   if (checkEmail) {
     alert("User already exists. Please Log in");
@@ -127,6 +121,7 @@ function signupFunc() {
 function loginFunc() {
   const email = document.getElementById("loginEmail").value;
   const pass = document.getElementById("loginPassword").value;
+  var users = getUsers();
   var userIndex = users.findIndex((u) => u.email === email);
   console.log(users);
   console.log(userIndex);
@@ -144,6 +139,7 @@ function loginFunc() {
 }
 function logoutFunc() {
   console.log("logged out");
+  var users = getUsers();
   users[currentUserIndex()].isLoggedIn = false;
   localStorage.setItem("tastyExUsers", JSON.stringify(users));
   toggleLogoutbtn("logout");
@@ -152,20 +148,23 @@ function toggleLogoutbtn(action) {
   if (action === "login") {
     document.getElementById("login-btn").classList.add("d-none");
     document.getElementById("signup-btn").classList.add("d-none");
-    document.getElementById("logout-btn").classList.remove("d-none");
+    logoutBtn.classList.remove("d-none");
   } else {
     document.getElementById("login-btn").classList.remove("d-none");
     document.getElementById("signup-btn").classList.remove("d-none");
-    document.getElementById("logout-btn").classList.add("d-none");
+    logoutBtn.classList.add("d-none");
   }
 }
 document.addEventListener("DOMContentLoaded", function () {
   blurValidation();
   submitValidation();
   autoPopulateCities();
-  getUsers();
-  if (currentUserIndex() >= 0) {
-    toggleLogoutbtn("login");
+  logoutBtn.addEventListener("click", logoutFunc);
+  if (localStorage) {
+    if (currentUserIndex() >= 0) {
+      toggleLogoutbtn("login");
+    }
+  } else {
+    alert("Unsupported browser.");
   }
 });
-export { currentUserIndex };
