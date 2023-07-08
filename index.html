@@ -111,14 +111,26 @@
                 </div>
               </div>
 
-              <div class="mb-3 text-center">
+              <div class="mt-4 mb-3 text-center">
                 <input type="submit" id="loginbtn" value="Submit" />
                 <input type="reset" value="Reset" />
               </div>
             </form>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">New around here? Sign up</a>
-            <a class="dropdown-item" href="#">Forgot password?</a>
+            <a
+              class="dropdown-item text-primary mt-2 mb-3"
+              data-bs-toggle="modal"
+              data-bs-target="#signupModal"
+              role="button"
+              >New around here? Sign up</a
+            >
+            <a
+              class="dropdown-item text-danger mb-3"
+              data-bs-toggle="modal"
+              data-bs-target="#resetModal"
+              role="button"
+              >Forgot password?</a
+            >
           </div>
         </div>
       </div>
@@ -364,8 +376,79 @@
                 </div>
               </div>
 
-              <div class="mb-3 text-center">
+              <div class="mt-4 mb-3 text-center">
                 <input type="submit" id="signupbtn" value="Submit" />
+                <input type="reset" value="Reset" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- reset pwd Modal -->
+    <div
+      class="modal fade"
+      id="resetModal"
+      tabindex="-1"
+      aria-labelledby="resetModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="sub-title" id="resetModalLabel">Reset Password</h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form
+              id="resetForm"
+              name="resetForm"
+              novalidate="true"
+              class="needs-validation"
+            >
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  name="email"
+                  id="resetEmail"
+                  class="form-control validate-onblur"
+                  value=""
+                  placeholder=" "
+                  required=""
+                />
+                <label for="resetEmail">Email</label>
+
+                <div class="invalid-feedback text-danger">
+                  Valid email is required.
+                </div>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  name="password"
+                  id="resetPassword"
+                  class="form-control validate-onblur"
+                  placeholder="..."
+                  value=""
+                  required=""
+                  pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&amp;])[A-Za-z\d@$!%*?&amp;].{8,}"
+                />
+                <label for="resetPassword">New Password</label>
+                <div class="invalid-feedback text-danger">
+                  Password must contain at least one number, one uppercase, one
+                  lower case letter, one special character and must be at least
+                  8 characters long.
+                </div>
+              </div>
+
+              <div class="mt-4 mb-3 text-center">
+                <input type="submit" id="resetPwdbtn" value="Submit" />
                 <input type="reset" value="Reset" />
               </div>
             </form>
@@ -469,7 +552,6 @@
         </div>
       </div>
     </div>
-
     <div
       class="modal fade"
       id="successModal"
@@ -518,7 +600,7 @@
         </div>
       </div>
     </div>
-    <header class="">
+    <header>
       <div
         class="
           d-flex
@@ -556,19 +638,24 @@
             <a href="#home" class="nav-link px-4 sub-title">Home</a>
           </li>
           <li>
-            <button
-              class="nav-link px-2 sub-title"
+            <a
+              class="nav-link px-4 sub-title"
               data-bs-toggle="modal"
               data-bs-target="#locationModal"
             >
               Locations
-            </button>
+            </a>
+          </li>
+          <li>
+            <a href="#menu" class="nav-link px-4 sub-title">Menu</a>
           </li>
           <li>
             <a href="#how" class="nav-link px-4 sub-title">How It Works</a>
           </li>
           <li><a href="#" class="nav-link px-4 sub-title">About</a></li>
-          <li><a href="#" class="nav-link px-4 sub-title">Contact</a></li>
+          <li>
+            <a href="#contact" class="nav-link px-4 sub-title">Contact</a>
+          </li>
         </ul>
 
         <div class="text-end row">
@@ -600,7 +687,7 @@
         </div>
       </div>
     </header>
-    <main id="#home">
+    <main id="home">
       <div
         id="myCarousel"
         class="carousel slide mb-6"
@@ -694,6 +781,67 @@
         </button>
       </div>
     </main>
+    <section id="prev-sec">
+      <div class="heading">
+        <div class="sub-title">Previous orders</div>
+        <h3 class="head-title">Try again</h3>
+        <div class="bottom-dots">
+          <span class="dot line-dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+      <div id="prev-dish-cont"></div>
+      <button
+        class="primary-btn scroll-btn scroll-btn-left"
+        onclick="function scrolldLeft(){prevDishCont.scrollLeft += 200;};scrolldLeft();"
+      >
+        >
+      </button>
+      <button
+        class="primary-btn scroll-btn scroll-btn-right"
+        onclick="function scrolldRight(){prevDishCont.scrollLeft -= 200;};scrolldRight();"
+      >
+        <
+      </button>
+    </section>
+    <section class="menu-sec" id="menu">
+      <div class="heading">
+        <div class="sub-title">Menu</div>
+        <h3 class="head-title">Browse restaurants</h3>
+        <div class="bottom-dots">
+          <span class="dot line-dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+      <div class="rest-sec">
+        <div id="rest-list"></div>
+        <button
+          class="primary-btn scroll-btn scroll-btn-left"
+          onclick="function scrollLeft(){restContainer.scrollLeft += 200;};scrollLeft();"
+        >
+          >
+        </button>
+        <button
+          class="primary-btn scroll-btn scroll-btn-right"
+          onclick="function scrollRight(){restContainer.scrollLeft -= 200;};scrollRight();"
+        >
+          <
+        </button>
+      </div>
+      <input
+        type="text"
+        class="search-bar mb-3 mb-lg-5 text-center"
+        placeholder="Search dish..."
+        aria-label="Search"
+        id="dish-search-box"
+      />
+      <div id="dish-list"></div>
+    </section>
+
     <section id="how">
       <div class="combo-banner">
         <div class="heading">
@@ -735,32 +883,6 @@
       </div>
     </section>
 
-    <section class="menu-sec">
-      <div class="rest-sec">
-        <div id="rest-list"></div>
-        <button
-          class="primary-btn scroll-btn scroll-btn-left"
-          onclick="function scrollLeft(){restContainer.scrollLeft += 200;};scrollLeft();"
-        >
-          >
-        </button>
-        <button
-          class="primary-btn scroll-btn scroll-btn-right"
-          onclick="function scrollRight(){restContainer.scrollLeft -= 200;};scrollRight();"
-        >
-          <
-        </button>
-      </div>
-      <input
-        type="text"
-        class="search-bar mb-3 mb-lg-5 text-center"
-        placeholder="Search dish..."
-        aria-label="Search"
-        id="dish-search-box"
-      />
-      <div id="dish-list"></div>
-    </section>
-
     <button
       id="cart-btn"
       class="primary-btn"
@@ -793,7 +915,9 @@
         ></button>
       </div>
       <div class="offcanvas-body cart-body" id="cart-body">
-        <div id="cart-dish-container">No item found.</div>
+        <div id="cart-dish-container">
+          <p class="text-center">No item found.</p>
+        </div>
         <div class="checkout primary-btn">
           <div id="total-order">₹ <span id="total-order-price">000</span></div>
           <button
@@ -806,8 +930,17 @@
         </div>
       </div>
     </div>
+    <!-- <button
+      class="btn btn-primary"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasTop"
+      aria-controls="offcanvasTop"
+    >
+      Toggle top offcanvas
+    </button> -->
 
-    <footer class="footer-area py-5">
+    <footer class="footer-area py-5" id="contact">
       <img
         class="footer-banner"
         src="./img/banners/footer-banner.webp"
@@ -967,6 +1100,7 @@
 
     <script>
       let restContainer = document.getElementById("rest-list");
+      var prevDishCont = document.getElementById("prev-dish-cont");
     </script>
     <script type="module">
       import { addDish, removeDish, updateDish } from "./js/order.js";

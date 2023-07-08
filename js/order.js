@@ -163,7 +163,7 @@ function loadCart() {
   var cartCont = document.getElementById("cart-dish-container");
   if (curUser >= 0) {
     if (users[curUser].cart.dishes.length < 1) {
-      cartCont.innerHTML = "No item found.";
+      cartCont.innerHTML = `<p class="text-center">No item found.</p>`;
       document.getElementById("checkout-btn").disabled = true;
       return;
     }
@@ -214,7 +214,7 @@ function loadCart() {
     document.getElementById("total-order-price").innerHTML = total;
   } else {
     alert("Please Login.");
-    cartCont.innerHTML = "No item found.";
+    cartCont.innerHTML = `<p class="text-center">No item found.</p>`;
     document.getElementById("checkout-btn").disabled = true;
   }
   console.log("load");
@@ -263,10 +263,52 @@ function successFunc() {
     document.getElementById("total-time").innerHTML;
   var users = getUsers();
   var curUser = currentUserIndex(users);
+  var prev = new Set([
+    ...users[curUser].prevOrders,
+    ...users[curUser].cart.dishes,
+  ]);
+  users[curUser].prevOrders = [...prev];
+  users[curUser].cart.dishes = [];
+  users[curUser].cart.quantity = [];
+  localStorage.setItem("tastyExUsers", JSON.stringify(users));
+  loadCart();
+}
+function loadPrevDishes() {
+  var users = getUsers();
+  var curUser = currentUserIndex(users);
+  var prevSec = document.getElementById("prev-sec");
+  if (curUser >= 0 && users[curUser].prevOrders.length > 0) {
+    prevSec.classList.remove("d-none");
+    var prevDishCont = document.getElementById("prev-dish-cont");
+    users[curUser].prevOrders.forEach((dishId, i) => {
+      var dish = menu.find((d) => d.dishId === dishId);
+      prevDishCont.innerHTML += ` <div class="dish">
+          <div class="dish-img">
+            <img
+              src="${"img/gallery/gallery-" + ((i + 1) % 11)}.jpg"
+              alt="dish-image"
+            />
+            <div class="rating">
+              ${dish.rating}
+              <ion-icon name="star" aria-hidden="true"></ion-icon>
+            </div>
+          </div>
+          <h4>${dish.name}</h4>
+          <div class="dish-footer">
+            <div class="price">₹${dish.price}</div>
+            <button data-id="${
+              dish.dishId
+            }" onclick="addDish(event);" class="primary-btn">Add</button>
+          </div>
+        </div>`;
+    });
+  } else {
+    prevSec.classList.add("d-none");
+  }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  fetch("menu.json")
+document.addEventListener("DOMContentLoaded", async function () {
+  await fetch("menu.json")
     .then(function (response) {
       return response.json();
     })
@@ -305,6 +347,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document
     .getElementById("dish-search-box")
     .addEventListener("keyup", searchDish);
+  loadPrevDishes();
   document.getElementById("cart-btn").addEventListener("click", loadCart);
   document.getElementById("checkout-btn").addEventListener("click", checkout);
   document.getElementById("confirm-btn").addEventListener("click", successFunc);

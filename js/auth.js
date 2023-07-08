@@ -78,6 +78,7 @@ function submitValidation() {
         } else {
           if (form.name == "signupForm") signupFunc();
           if (form.name == "loginForm") loginFunc();
+          if (form.name == "resetForm") resetPwdFunc();
         }
 
         form.classList.add("was-validated");
@@ -136,12 +137,25 @@ function loginFunc() {
     } else alert("Invalid Password");
   } else alert("User doesn't exist");
 }
+
+function resetPwdFunc() {
+  const email = document.getElementById("resetEmail").value;
+  const pass = document.getElementById("resetPassword").value;
+  var users = getUsers();
+  var userIndex = users.findIndex((u) => u.email === email);
+  if (userIndex >= 0) {
+    users[userIndex].pwd = pass;
+    localStorage.setItem("tastyExUsers", JSON.stringify(users));
+    //toggle logout btn
+    window.location.reload();
+  } else alert("User doesn't exist");
+}
 function logoutFunc() {
   console.log("logged out");
   var users = getUsers();
   users[currentUserIndex(users)].isLoggedIn = false;
   localStorage.setItem("tastyExUsers", JSON.stringify(users));
-  toggleLogoutbtn("logout");
+  window.location.reload();
 }
 function toggleLogoutbtn(action) {
   if (action === "login") {
