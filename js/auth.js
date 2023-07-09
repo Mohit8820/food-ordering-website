@@ -16,7 +16,16 @@ const cityList = {
 };
 var logoutBtn = document.getElementById("logout-btn");
 
+/*************toggle menu********* */
+function toggleMenu() {
+  console.log("aaaa");
+  var headContent = document.getElementById("header-content");
+  headContent.classList.toggle("active-menu");
+  document.getElementById("header").classList.toggle("active-menu-header");
+}
+
 /*************populating cities********* */
+
 function autoPopulateCities() {
   document.getElementById("select-state").addEventListener("change", () => {
     console.log("abc");
@@ -180,4 +189,6 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     alert("Unsupported browser.");
   }
+
+  document.getElementById("menu-btn").addEventListener("click", toggleMenu);
 });

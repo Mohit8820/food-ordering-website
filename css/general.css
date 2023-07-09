@@ -143,19 +143,44 @@ input.form-control,
   font-size: 2rem;
 }
 /*****************************/
+.menu-btn {
+  font-size: 2.8rem;
+  padding: 0.5rem;
+  display: none;
+}
+header .main-logo {
+  display: none;
+}
 header {
   backdrop-filter: blur(2rem);
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   width: 100vw;
+  /* height: 8rem; */
   top: 0;
   left: 0;
   z-index: 9;
-  padding: 1rem 10rem;
+  padding: 1rem 9vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.4s;
 }
+
+.header-content {
+  flex-grow: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  transition: all 0.4s;
+}
+
 ul button {
   box-shadow: none;
 }
+/*****************************/
 .banner {
   width: 100%;
   height: 100%;
@@ -230,6 +255,7 @@ ul button {
 }
 .combo-banner .head-title {
   color: #fff;
+  width: 80vw;
 }
 .how-points-sec {
   width: 80%;

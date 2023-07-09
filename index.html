@@ -600,19 +600,28 @@
         </div>
       </div>
     </div>
-    <header>
-      <div
+
+    <header id="header">
+      <a
+        href="/"
         class="
-          d-flex
-          flex-wrap
+          head-logo
+          main-logo
+          flex-column
           align-items-center
-          justify-content-center justify-content-lg-between
-          flex-column flex-lg-row
+          justify-content-center
+          mb-2 mb-lg-0
+          text-white text-decoration-none
         "
       >
+        <img src="img\logo.png" alt="" width="100" />
+        <div class="sub-title">Tasty Ex</div>
+      </a>
+      <div id="header-content" class="header-content">
         <a
           href="/"
           class="
+            head-logo
             d-flex
             flex-column
             align-items-center
@@ -624,22 +633,15 @@
           <img src="img\logo.png" alt="" width="100" />
           <div class="sub-title">Tasty Ex</div>
         </a>
-
         <ul
-          class="
-            nav
-            d-flex
-            flex-column flex-lg-row
-            align-items-center
-            justify-content-center
-          "
+          class="nav d-flex flex-row align-items-center justify-content-center"
         >
           <li>
-            <a href="#home" class="nav-link px-4 sub-title">Home</a>
+            <a href="#home" class="nav-link px-3 px-lg-4 sub-title">Home</a>
           </li>
           <li>
             <a
-              class="nav-link px-4 sub-title"
+              class="nav-link px-3 px-lg-4 sub-title"
               data-bs-toggle="modal"
               data-bs-target="#locationModal"
             >
@@ -647,18 +649,22 @@
             </a>
           </li>
           <li>
-            <a href="#menu" class="nav-link px-4 sub-title">Menu</a>
+            <a href="#menu" class="nav-link px-3 px-lg-4 sub-title">Menu</a>
           </li>
           <li>
-            <a href="#how" class="nav-link px-4 sub-title">How It Works</a>
+            <a href="#how" class="nav-link px-3 px-lg-4 sub-title"
+              >How It Works</a
+            >
           </li>
-          <li><a href="#" class="nav-link px-4 sub-title">About</a></li>
+          <li><a href="#" class="nav-link px-3 px-lg-4 sub-title">About</a></li>
           <li>
-            <a href="#contact" class="nav-link px-4 sub-title">Contact</a>
+            <a href="#contact" class="nav-link px-3 px-lg-4 sub-title"
+              >Contact</a
+            >
           </li>
         </ul>
 
-        <div class="text-end row">
+        <div class="row">
           <button
             type="button"
             class="btn btn-outline-light me-3 col-auto"
@@ -686,6 +692,9 @@
           </button>
         </div>
       </div>
+      <button class="sec-btn menu-btn" id="menu-btn" type="button">
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
     </header>
     <main id="home">
       <div
@@ -930,15 +939,6 @@
         </div>
       </div>
     </div>
-    <!-- <button
-      class="btn btn-primary"
-      type="button"
-      data-bs-toggle="offcanvas"
-      data-bs-target="#offcanvasTop"
-      aria-controls="offcanvasTop"
-    >
-      Toggle top offcanvas
-    </button> -->
 
     <footer class="footer-area py-5" id="contact">
       <img
