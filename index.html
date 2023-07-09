@@ -3,16 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="description"
-      content="Omnifood is an AI-powered food subscription that will make you eat healthy again, 365 days per year. It's tailored to your personal tastes and nutritional needs."
-    />
 
     <!-- Always include this line of code!!! -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" href="img/favicon.png" />
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+    <link rel="icon" href="img/favicon.ico" />
+    <link rel="apple-touch-icon" href="img/favicon.ico" />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -46,7 +42,7 @@
     ></script> -->
     <!-- <script defer src="js/script.js"></script> -->
 
-    <title>Omnifood &mdash; Never cook again!</title>
+    <title>Tasty Express &mdash; Order now!</title>
   </head>
   <body>
     <!-- Login Modal -->
@@ -572,7 +568,7 @@
           </div>
           <div class="modal-body">
             <div class="success-img">
-              <img src="./img/success.gif" alt="" />
+              <img src="./img/gifs/success.gif" alt="" />
             </div>
             <h4 class="text-center text-warning mb-5">
               Your order has been confirmed.
@@ -610,12 +606,10 @@
           flex-column
           align-items-center
           justify-content-center
-          mb-2 mb-lg-0
           text-white text-decoration-none
         "
       >
-        <img src="img\logo.png" alt="" width="100" />
-        <div class="sub-title">Tasty Ex</div>
+        <img src="img\logo.png" alt="" width="70" />
       </a>
       <div id="header-content" class="header-content">
         <a
@@ -626,12 +620,10 @@
             flex-column
             align-items-center
             justify-content-center
-            mb-2 mb-lg-0
             text-white text-decoration-none
           "
         >
-          <img src="img\logo.png" alt="" width="100" />
-          <div class="sub-title">Tasty Ex</div>
+          <img src="img\logo.png" alt="" width="70" />
         </a>
         <ul
           class="nav d-flex flex-row align-items-center justify-content-center"
@@ -891,7 +883,7 @@
         </div>
       </div>
     </section>
-
+    <!------------------------ cart ----------------------->
     <button
       id="cart-btn"
       class="primary-btn"
@@ -939,6 +931,28 @@
         </div>
       </div>
     </div>
+    <!---------------- toast ------------------------------->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        id="liveToast"
+        class="toast align-items-center border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex align-items-center p-3">
+          <div class="toast-body" id="toast-body">Welcome.</div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <!---------------- footer ------------------------------->
 
     <footer class="footer-area py-5" id="contact">
       <img

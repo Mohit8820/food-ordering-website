@@ -1,4 +1,4 @@
-import { currentUserIndex, getUsers } from "./auth.js";
+import { currentUserIndex, getUsers, showToast } from "./auth.js";
 
 //one modal whose body changes as per button click
 //same for toast
@@ -68,6 +68,10 @@ function filterDishes(i) {
 
 let dishContainer = document.getElementById("dish-list");
 function appendDishes(dishes) {
+  if (dishes.length < 1) {
+    dishContainer.innerHTML = `<img class="no-food" alt="No dish found" src="./img/gifs/noFood.gif" />`;
+    return;
+  }
   dishContainer.innerHTML = "";
   dishes.forEach((dish, i) => {
     dishContainer.innerHTML += `
@@ -113,14 +117,20 @@ export function addDish(e) {
   if (curUser >= 0) {
     var dishInd = users[curUser].cart.dishes.findIndex((d) => d === dishId);
     if (dishInd >= 0) {
-      users[curUser].cart.quantity[dishInd]++;
+      if (users[curUser].cart.quantity[dishInd] < 10)
+        users[curUser].cart.quantity[dishInd]++;
+      else {
+        showToast("Can't order more than 10 units of same item.");
+        return;
+      }
     } else {
       users[curUser].cart.dishes.push(dishId);
       users[curUser].cart.quantity.push(1);
     }
     localStorage.setItem("tastyExUsers", JSON.stringify(users));
+    showToast("Dish added to cart.");
   } else {
-    alert("Please Login.");
+    showToast("Please Login.");
   }
 }
 export function updateDish(action, id) {
@@ -131,13 +141,13 @@ export function updateDish(action, id) {
   var q = users[curUser].cart.quantity[i];
   if (action === "inc") {
     if (q < 10) users[curUser].cart.quantity[i]++;
-    else alert("Can't order more than 10 units of same item.");
+    else showToast("Can't order more than 10 units of same item.");
   } else {
     if (q > 1) users[curUser].cart.quantity[i]--;
     else if (q === 1) {
       removeDish(id);
       return;
-    } else alert("Error");
+    } else showToast("Error");
   }
   localStorage.setItem("tastyExUsers", JSON.stringify(users));
   loadCart();
@@ -151,7 +161,7 @@ export function removeDish(id) {
     users[curUser].cart.dishes.splice(index, 1);
     users[curUser].cart.quantity.splice(index, 1);
   } else {
-    alert("dish not in cart");
+    showToast("dish not in cart");
   }
   localStorage.setItem("tastyExUsers", JSON.stringify(users));
   loadCart();
@@ -165,6 +175,7 @@ function loadCart() {
     if (users[curUser].cart.dishes.length < 1) {
       cartCont.innerHTML = `<p class="text-center">No item found.</p>`;
       document.getElementById("checkout-btn").disabled = true;
+      document.getElementById("total-order-price").innerHTML = 0;
       return;
     }
     var total = 0;
@@ -213,7 +224,7 @@ function loadCart() {
     document.getElementById("checkout-btn").disabled = false;
     document.getElementById("total-order-price").innerHTML = total;
   } else {
-    alert("Please Login.");
+    showToast("Please Login.");
     cartCont.innerHTML = `<p class="text-center">No item found.</p>`;
     document.getElementById("checkout-btn").disabled = true;
   }

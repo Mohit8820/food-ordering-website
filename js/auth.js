@@ -15,11 +15,19 @@ const cityList = {
   ],
 };
 var logoutBtn = document.getElementById("logout-btn");
+var headContent = document.getElementById("header-content");
+
+/************toast*********** */
+const toastLiveExample = document.getElementById("liveToast");
+const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+
+export function showToast(message) {
+  document.getElementById("toast-body").innerHTML = message;
+  toastBootstrap.show();
+}
 
 /*************toggle menu********* */
 function toggleMenu() {
-  console.log("aaaa");
-  var headContent = document.getElementById("header-content");
   headContent.classList.toggle("active-menu");
   document.getElementById("header").classList.toggle("active-menu-header");
 }
@@ -117,7 +125,7 @@ function signupFunc() {
   var users = getUsers();
   const checkEmail = users.some((u) => user.email === u.email);
   if (checkEmail) {
-    alert("User already exists. Please Log in");
+    showToast("User already exists. Please Log in.");
     return;
   }
   users.forEach((user) => {
@@ -143,8 +151,8 @@ function loginFunc() {
       localStorage.setItem("tastyExUsers", JSON.stringify(users));
       //toggle logout btn
       window.location.reload();
-    } else alert("Invalid Password");
-  } else alert("User doesn't exist");
+    } else showToast("Invalid Password");
+  } else showToast("User doesn't exist");
 }
 
 function resetPwdFunc() {
@@ -157,7 +165,7 @@ function resetPwdFunc() {
     localStorage.setItem("tastyExUsers", JSON.stringify(users));
     //toggle logout btn
     window.location.reload();
-  } else alert("User doesn't exist");
+  } else showToast("User doesn't exist");
 }
 function logoutFunc() {
   console.log("logged out");
@@ -187,8 +195,12 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleLogoutbtn("login");
     }
   } else {
-    alert("Unsupported browser.");
+    showToast("Unsupported browser.");
   }
 
   document.getElementById("menu-btn").addEventListener("click", toggleMenu);
+  var navLinks = document.getElementsByClassName("nav-link");
+  Array.from(navLinks).forEach((nav) => {
+    nav.addEventListener("click", toggleMenu);
+  });
 });
