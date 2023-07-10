@@ -373,7 +373,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       restaurantImages[i]
     }" />
           </div>
-          <h4 class="center-text">${rest}</h4>
+          <h4 class="text-center">${rest}</h4>
         </div>`;
   });
   let restaurants = document.querySelectorAll(".restaurant");

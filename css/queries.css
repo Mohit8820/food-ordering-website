@@ -51,6 +51,18 @@
     /* align-items: flex-start; */
   }
 }
+@media (max-width: 450px) {
+  .head-title {
+    font-size: 3rem;
+  }
+  #rest-list {
+    gap: 0;
+  }
+  .rest-img {
+    width: 11rem;
+    height: 11rem;
+  }
+}
 @media (max-width: 365px) {
   html {
     font-size: 55%;

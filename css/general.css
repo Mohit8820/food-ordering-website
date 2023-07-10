@@ -241,7 +241,7 @@ ul button {
   border-right: 4rem solid var(--head-color);
 }
 .combo-banner {
-  background-image: linear-gradient(
+  background: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.5) 0%,
       rgba(0, 0, 0, 0.5) 100%
@@ -321,6 +321,8 @@ ul button {
   transform: translate(50%, -100%);
   border-radius: 50%;
   padding: 0;
+  opacity: 0.9;
+  background: var(--head-color) !important;
 }
 .scroll-btn-right {
   left: 0;
@@ -384,6 +386,7 @@ ul button {
   align-items: stretch;
   justify-content: center;
   gap: 2.5rem;
+  background: #fff;
 }
 .dish {
   width: 30rem;
@@ -396,6 +399,7 @@ ul button {
   justify-content: space-between;
   flex-direction: column;
   overflow: hidden;
+  background: #fff;
 }
 .dish-img {
   border-radius: 1rem 1rem 0 0;
@@ -619,15 +623,19 @@ footer {
   position: relative;
   overflow: hidden;
   padding: 8rem 2rem;
+  /* background: url("/img/banners/footer-banner.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; */
 }
 .footer-banner {
-  position: absolute;
+  position: fixed;
   top: 0;
   object-fit: cover;
   object-position: center;
   height: 100%;
   width: 100%;
-  opacity: 0.22;
+  opacity: 0.15;
   z-index: -1;
 }
 .footer-content {
