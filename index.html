@@ -27,15 +27,6 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/queries.css" />
 
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule=""
-      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
-    ></script>
-
     <!-- <script
       defer
       src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
@@ -474,11 +465,38 @@
             ></button>
           </div>
           <div class="modal-body">
-            <iframe
-              src="https://www.google.com/maps/d/embed?mid=1vR4VtGtjwdM3h9ectUPI87crJ7J6a_M&hl=en&ehbc=2E312F"
+            <!-- <iframe
+              src="https://www.google.com/maps/d/embed?mid=1vR4VtGtjwdM3h9ectUPI87crJ7J6a_M&hl=en&ehbc=2E312F&callback=gmNoop"
               width="100%"
               height="480"
-            ></iframe>
+            ></iframe> -->
+            <div id="state-cont">
+              <button class="primary-btn m-2 state-btn" value="bh">
+                Bihar
+              </button>
+              <button class="primary-btn m-2 state-btn" value="jh">
+                Jharkhand
+              </button>
+              <button class="primary-btn m-2 state-btn" value="kt">
+                Karnataka
+              </button>
+              <button class="primary-btn m-2 state-btn" value="tn">
+                Tamil Nadu
+              </button>
+              <button class="primary-btn m-2 state-btn" value="mh">
+                Maharashtra
+              </button>
+              <button class="primary-btn m-2 state-btn" value="wb">
+                West Bengal
+              </button>
+              <button class="primary-btn m-2 state-btn" value="dl">
+                Delhi
+              </button>
+            </div>
+            <hr />
+            <div id="city-cont" class="text-center">
+              Select state to view available cities.
+            </div>
           </div>
         </div>
       </div>
@@ -599,7 +617,7 @@
 
     <header id="header">
       <a
-        href="/"
+        href="/index.html"
         class="
           head-logo
           main-logo
@@ -685,7 +703,22 @@
         </div>
       </div>
       <button class="sec-btn menu-btn" id="menu-btn" type="button">
-        <ion-icon name="menu-outline"></ion-icon>
+        <svg
+          clip-rule="evenodd"
+          fill-rule="evenodd"
+          stroke-linejoin="round"
+          stroke-miterlimit="2"
+          width="35"
+          height="35"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentcolor"
+        >
+          <path
+            d="m3.3 15.4c.717 0 1.3.583 1.3 1.3s-.583 1.3-1.3 1.3-1.3-.583-1.3-1.3.583-1.3 1.3-1.3zm2.7 1.85c0-.414.336-.75.75-.75h14.5c.414 0 .75.336.75.75s-.336.75-.75.75h-14.5c-.414 0-.75-.336-.75-.75zm-2.7-6.55c.717 0 1.3.583 1.3 1.3s-.583 1.3-1.3 1.3-1.3-.583-1.3-1.3.583-1.3 1.3-1.3zm2.7 1.3c0-.414.336-.75.75-.75h14.5c.414 0 .75.336.75.75s-.336.75-.75.75h-14.5c-.414 0-.75-.336-.75-.75zm-2.7-6c.717 0 1.3.583 1.3 1.3s-.583 1.3-1.3 1.3-1.3-.583-1.3-1.3.583-1.3 1.3-1.3zm2.7.75c0-.414.336-.75.75-.75h14.5c.414 0 .75.336.75.75s-.336.75-.75.75h-14.5c-.414 0-.75-.336-.75-.75z"
+            fill-rule="nonzero"
+          />
+        </svg>
       </button>
     </header>
     <main id="home">
@@ -798,13 +831,33 @@
         class="primary-btn scroll-btn scroll-btn-left"
         onclick="function scrolldLeft(){prevDishCont.scrollLeft += 200;};scrolldLeft();"
       >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="17"
+          height="17"
+          viewBox="0 0 24 24"
+          fill="currentcolor"
         >
+          <path
+            d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z"
+          />
+        </svg>
       </button>
       <button
         class="primary-btn scroll-btn scroll-btn-right"
         onclick="function scrolldRight(){prevDishCont.scrollLeft -= 200;};scrolldRight();"
       >
-        <
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="17"
+          height="17"
+          viewBox="0 0 24 24"
+          fill="currentcolor"
+        >
+          <path
+            d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"
+          />
+        </svg>
       </button>
     </section>
     <section class="menu-sec" id="menu">
@@ -824,13 +877,33 @@
           class="primary-btn scroll-btn scroll-btn-left"
           onclick="function scrollLeft(){restContainer.scrollLeft += 200;};scrollLeft();"
         >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="17"
+            height="17"
+            viewBox="0 0 24 24"
+            fill="currentcolor"
           >
+            <path
+              d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z"
+            />
+          </svg>
         </button>
         <button
           class="primary-btn scroll-btn scroll-btn-right"
           onclick="function scrollRight(){restContainer.scrollLeft -= 200;};scrollRight();"
         >
-          <
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="17"
+            height="17"
+            viewBox="0 0 24 24"
+            fill="currentcolor"
+          >
+            <path
+              d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"
+            />
+          </svg>
         </button>
       </div>
       <input
@@ -892,7 +965,17 @@
       data-bs-target="#offcanvasRight"
       aria-controls="offcanvasRight"
     >
-      <ion-icon name="cart-outline"></ion-icon>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="26"
+        height="26"
+        viewBox="0 0 24 24"
+        fill="currentcolor"
+      >
+        <path
+          d="M24 3l-.743 2h-1.929l-3.474 12h-13.239l-4.615-11h16.812l-.564 2h-13.24l2.937 7h10.428l3.432-12h4.195zm-15.5 15c-.828 0-1.5.672-1.5 1.5 0 .829.672 1.5 1.5 1.5s1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm6.9-7-1.9 7c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5z"
+        />
+      </svg>
     </button>
 
     <div
@@ -926,7 +1009,22 @@
             data-bs-toggle="modal"
             data-bs-target="#orderModal"
           >
-            Place Order <ion-icon name="caret-forward-outline"></ion-icon>
+            Place Order
+            <svg
+              clip-rule="evenodd"
+              fill-rule="evenodd"
+              stroke-linejoin="round"
+              stroke-miterlimit="2"
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentcolor"
+            >
+              <path
+                d="m10.211 7.155c-.141-.108-.3-.157-.456-.157-.389 0-.755.306-.755.749v8.501c0 .445.367.75.755.75.157 0 .316-.05.457-.159 1.554-1.203 4.199-3.252 5.498-4.258.184-.142.29-.36.29-.592 0-.23-.107-.449-.291-.591-1.299-1.002-3.945-3.044-5.498-4.243z"
+              />
+            </svg>
           </button>
         </div>
       </div>
@@ -967,16 +1065,46 @@
             <div class="sub-title mt-3">Tasty Express</div>
             <div class="social-links-two d-flex align-items-center gap-5 mt-3">
               <a class="Facebook" href="https://www.facebook.com/">
-                <ion-icon name="logo-facebook"></ion-icon>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="#0063c2"
+                >
+                  <path
+                    d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z"
+                  />
+                </svg>
               </a>
               <a class="Twitter" href="https://twitter.com/login">
-                <ion-icon name="logo-twitter"></ion-icon>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="#0063c2"
+                >
+                  <path
+                    d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"
+                  />
+                </svg>
               </a>
               <a
                 class="Linkedin"
                 href="https://www.linkedin.com/login?fromSignIn=true&amp;trk=guest_homepage-basic_nav-header-signin"
               >
-                <ion-icon name="logo-linkedin"></ion-icon>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="#0063c2"
+                >
+                  <path
+                    d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"
+                  />
+                </svg>
               </a>
             </div>
             <p class="mt-3"><strong>©</strong> Mohit Sah | 2023</p>
@@ -1005,159 +1133,55 @@
             <h4>Contact us</h4>
             <ul>
               <li class="mt-3">
-                <ion-icon name="call-outline"></ion-icon>&emsp;+91 933XXXXXX1
+                <svg
+                  width="17"
+                  height="17"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  fill="currentcolor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M8.26 1.289l-1.564.772c-5.793 3.02 2.798 20.944 9.31 20.944.46 0 .904-.094 1.317-.284l1.542-.755-2.898-5.594-1.54.754c-.181.087-.384.134-.597.134-2.561 0-6.841-8.204-4.241-9.596l1.546-.763-2.875-5.612zm7.746 22.711c-5.68 0-12.221-11.114-12.221-17.832 0-2.419.833-4.146 2.457-4.992l2.382-1.176 3.857 7.347-2.437 1.201c-1.439.772 2.409 8.424 3.956 7.68l2.399-1.179 3.816 7.36s-2.36 1.162-2.476 1.215c-.547.251-1.129.376-1.733.376"
+                  /></svg
+                >&nbsp;&nbsp;+91 933XXXXXX1
               </li>
               <li class="mt-3">
-                <ion-icon name="mail-outline"></ion-icon>&emsp;tastyex@gmail.com
+                <svg
+                  width="17"
+                  height="17"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  fill="currentcolor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M24 21h-24v-18h24v18zm-23-16.477v15.477h22v-15.477l-10.999 10-11.001-10zm21.089-.523h-20.176l10.088 9.171 10.088-9.171z"
+                  /></svg
+                >&nbsp;&nbsp;tastyex@gmail.com
               </li>
               <li class="mt-3">
-                <ion-icon name="location-outline"></ion-icon>&emsp;Abc xyz
+                <svg
+                  width="17"
+                  height="17"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  fill="currentcolor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 10c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2m0-5c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3m-7 2.602c0-3.517 3.271-6.602 7-6.602s7 3.085 7 6.602c0 3.455-2.563 7.543-7 14.527-4.489-7.073-7-11.072-7-14.527m7-7.602c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602"
+                  /></svg
+                >&nbsp;&nbsp;Abc xyz
               </li>
-              <li class="mt-3">&emsp;&emsp;Ranchi, Jharkhand</li>
+              <li class="mt-3">&ensp;&emsp;Ranchi, Jharkhand</li>
             </ul>
           </div>
         </div>
       </div>
-      <!-- <div class="footer-content m-auto py-5">
-        <div class="container">
-          <div class="row clearfix">
-            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-              <div class="row clearfix">
-                <div class="col-lg-7 col-sm-6 col-xs-12 column">
-                  <div class="footer-widget about-widget">
-                    <div class="logo">
-                      <img src="./img/logo.png" alt="" width="140" />
-                    </div>
-                    <ul class="contact-info">
-                      <li>
-                        One is to focus on the quality of your meat. If you can
-                        call out organic beef, sustainable farming.
-                      </li>
-                      <li><span>Phone:</span> +92300-400-2333</li>
-                      <li><span>Email:</span> restaurant@gmail.com</li>
-                    </ul>
-                    <div class="social-links-two clearfix">
-                      <a class="Facebook" href="https://www.facebook.com/">
-                        <ion-icon name="logo-facebook"></ion-icon>
-                      </a>
-                      <a class="Twitter" href="https://twitter.com/login">
-                        <ion-icon name="logo-twitter"></ion-icon>
-                      </a>
-                      <a
-                        class="Linkedin"
-                        href="https://www.linkedin.com/login?fromSignIn=true&amp;trk=guest_homepage-basic_nav-header-signin"
-                      >
-                        <ion-icon name="logo-linkedin"></ion-icon>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-5 col-sm-6 col-xs-12 column">
-                  <h2>Our Service</h2>
-                  <div class="footer-widget links-widget">
-                    <ul>
-                      <li>
-                        <a href="https://marketplace.foodotawp.com/all-vendors/"
-                          >All Vendors</a
-                        >
-                      </li>
-                      <li>
-                        <a href="https://marketplace.foodotawp.com/blog/"
-                          >Blog</a
-                        >
-                      </li>
-                      <li>
-                        <a href="https://marketplace.foodotawp.com/home-one/"
-                          >Home 1</a
-                        >
-                      </li>
-                      <li>
-                        <a href="https://marketplace.foodotawp.com/home-two/"
-                          >Home 2</a
-                        >
-                      </li>
-                      <li>
-                        <a href="https://marketplace.foodotawp.com/"
-                          >Main Home</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-              <div class="row clearfix">
-                <div class="col-lg-7 col-sm-6 col-xs-12 column">
-                  <div class="footer-widget news-widget">
-                    <h2>Latest News</h2>
-                    <div class="news-post">
-                      <div class="icon"></div>
-                      <div class="news-content">
-                        <figure class="image-thumb">
-                          <img
-                            class="img-fluid"
-                            src="https://marketplace.foodotawp.com/wp-content/uploads/2021/03/post-5-150x150.jpg"
-                            alt=""
-                          />
-                        </figure>
-                        <a
-                          href="https://marketplace.foodotawp.com/grilled-chicken-kabab-with-tomato-sauce/"
-                          >Grilled Chicken &amp; kabab with tomato Sauce
-                        </a>
-                      </div>
-                      <div class="time">March 19, 2021</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-5 col-sm-6 col-xs-12 column">
-                  <div class="footer-widget links-widget">
-                    <h2>Useful Links</h2>
-                    <ul>
-                      <li>
-                        <a href="https://marketplace.foodotawp.com/all-vendors/"
-                          >All Vendors</a
-                        >
-                      </li>
-                      <li>
-                        <a href="https://marketplace.foodotawp.com/home-one/"
-                          >Home 1</a
-                        >
-                      </li>
-                      <li>
-                        <a href="https://marketplace.foodotawp.com/home-two/"
-                          >Home 2</a
-                        >
-                      </li>
-                      <li>
-                        <a href="https://marketplace.foodotawp.com/home-1/"
-                          >Home 3</a
-                        >
-                      </li>
-                      <li>
-                        <a href="https://marketplace.foodotawp.com/price-plan/"
-                          >Pricing Plan</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container clearfix">
-          <div class="copyright text-center">
-            <p>
-              Copyright 2023 © Theme Created By
-              <a href="https://scriptsbundle.com/">Scriptsbundle</a> All Rights
-              Reserved
-            </p>
-          </div>
-        </div>
-      </div> -->
     </footer>
 
     <script>

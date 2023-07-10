@@ -35,8 +35,23 @@ function toggleMenu() {
 /*************populating cities********* */
 
 function autoPopulateCities() {
+  Array.from(document.getElementsByClassName("state-btn")).forEach(
+    (stateBtn) => {
+      stateBtn.addEventListener("click", function () {
+        var StateClicked = stateBtn.value;
+        var cityhtml = "";
+        for (var i = 0; i < cityList[StateClicked].length; i++) {
+          cityhtml =
+            cityhtml +
+            "<div class='sec-btn'>" +
+            cityList[StateClicked][i] +
+            "</div>";
+        }
+        document.getElementById("city-cont").innerHTML = cityhtml;
+      });
+    }
+  );
   document.getElementById("select-state").addEventListener("change", () => {
-    console.log("abc");
     var StateSelected = document.getElementById("select-state").value;
     var htmlString = `<option value="" selected="" disabled="" hidden="">
   Choose City

@@ -83,7 +83,14 @@ function appendDishes(dishes) {
           />
           <div class="rating">
             ${dish.rating}
-            <ion-icon name="star" aria-hidden="true"></ion-icon>
+            <svg fill="currentcolor" 
+            clip-rule="evenodd" 
+            fill-rule="evenodd" 
+            stroke-linejoin="round" 
+            stroke-miterlimit="2" 
+            viewBox="0 0 24 24" 
+            width="12"
+            height="12" xmlns="http://www.w3.org/2000/svg"><path d="m11.322 2.923c.126-.259.39-.423.678-.423.289 0 .552.164.678.423.974 1.998 2.65 5.44 2.65 5.44s3.811.524 6.022.829c.403.055.65.396.65.747 0 .19-.072.383-.231.536-1.61 1.538-4.382 4.191-4.382 4.191s.677 3.767 1.069 5.952c.083.462-.275.882-.742.882-.122 0-.244-.029-.355-.089-1.968-1.048-5.359-2.851-5.359-2.851s-3.391 1.803-5.359 2.851c-.111.06-.234.089-.356.089-.465 0-.825-.421-.741-.882.393-2.185 1.07-5.952 1.07-5.952s-2.773-2.653-4.382-4.191c-.16-.153-.232-.346-.232-.535 0-.352.249-.694.651-.748 2.211-.305 6.021-.829 6.021-.829s1.677-3.442 2.65-5.44z" fill-rule="nonzero"/></svg>
           </div>
         </div>
         <h4>${dish.name}</h4>
@@ -197,17 +204,36 @@ function loadCart() {
       </div>
       <div class="cart-dish-col-3">
      <div class="quantity-editor"> 
-     <ion-icon name="remove-outline" class="sec-btn"  onclick="updateDish(\`` +
+     <svg clip-rule="evenodd" 
+     fill-rule="evenodd" 
+     stroke-linejoin="round" 
+     stroke-miterlimit="2" 
+     width="28"
+       height="28"
+       viewBox="0 0 24 24"
+       fill="currentcolor"
+     class="sec-btn"  onclick="updateDish(\`` +
         "dec" +
         `\`,\`` +
         dishId +
-        `\`);"></ion-icon>
+        `\`);" xmlns="http://www.w3.org/2000/svg"><path d="m21 11.75c0-.414-.336-.75-.75-.75h-16.5c-.414 0-.75.336-.75.75s.336.75.75.75h16.5c.414 0 .75-.336.75-.75z" fill-rule="nonzero"/></svg>
      <div class="dish-quantity">${users[curUser].cart.quantity[i]}</div>
-     <ion-icon name="add-outline"  class="sec-btn" onclick="updateDish(\`` +
+     <svg clip-rule="evenodd" 
+     fill-rule="evenodd"
+      stroke-linejoin="round"
+       stroke-miterlimit="2"
+       width="28"
+       height="28"
+       viewBox="0 0 24 24"
+       fill="currentcolor" xmlns="http://www.w3.org/2000/svg"
+       class="sec-btn" onclick="updateDish(\`` +
         "inc" +
         `\`,\`` +
         dishId +
-        `\`);"></ion-icon>
+        `\`);">
+        <path d="m11 11h-7.25c-.414 0-.75.336-.75.75s.336.75.75.75h7.25v7.25c0 .414.336.75.75.75s.75-.336.75-.75v-7.25h7.25c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-7.25v-7.25c0-.414-.336-.75-.75-.75s-.75.336-.75.75z" fill-rule="nonzero"/>
+     </svg>
+     
        </div>
         <div class="price">₹ ${
           users[curUser].cart.quantity[i] * dish.price
@@ -216,8 +242,8 @@ function loadCart() {
         <button class="del-dish-btn sec-btn"  onclick="removeDish(\`` +
         dishId +
         `\`);">
-          <ion-icon name="trash-outline"></ion-icon>
-        </button>
+        <svg fill="currentcolor" width="20" height="20"             viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M19 24h-14c-1.104 0-2-.896-2-2v-17h-1v-2h6v-1.5c0-.827.673-1.5 1.5-1.5h5c.825 0 1.5.671 1.5 1.5v1.5h6v2h-1v17c0 1.104-.896 2-2 2zm0-19h-14v16.5c0 .276.224.5.5.5h13c.276 0 .5-.224.5-.5v-16.5zm-9 4c0-.552-.448-1-1-1s-1 .448-1 1v9c0 .552.448 1 1 1s1-.448 1-1v-9zm6 0c0-.552-.448-1-1-1s-1 .448-1 1v9c0 .552.448 1 1 1s1-.448 1-1v-9zm-2-7h-4v1h4v-1z"/></svg>        </button>
     </div>`;
       total = total + users[curUser].cart.quantity[i] * dish.price;
     });
@@ -301,8 +327,15 @@ function loadPrevDishes() {
             />
             <div class="rating">
               ${dish.rating}
-              <ion-icon name="star" aria-hidden="true"></ion-icon>
-            </div>
+              <svg fill="currentcolor" 
+            clip-rule="evenodd" 
+            fill-rule="evenodd" 
+            stroke-linejoin="round" 
+            stroke-miterlimit="2" 
+            viewBox="0 0 24 24" 
+            width="12"
+            height="12" xmlns="http://www.w3.org/2000/svg"><path d="m11.322 2.923c.126-.259.39-.423.678-.423.289 0 .552.164.678.423.974 1.998 2.65 5.44 2.65 5.44s3.811.524 6.022.829c.403.055.65.396.65.747 0 .19-.072.383-.231.536-1.61 1.538-4.382 4.191-4.382 4.191s.677 3.767 1.069 5.952c.083.462-.275.882-.742.882-.122 0-.244-.029-.355-.089-1.968-1.048-5.359-2.851-5.359-2.851s-3.391 1.803-5.359 2.851c-.111.06-.234.089-.356.089-.465 0-.825-.421-.741-.882.393-2.185 1.07-5.952 1.07-5.952s-2.773-2.653-4.382-4.191c-.16-.153-.232-.346-.232-.535 0-.352.249-.694.651-.748 2.211-.305 6.021-.829 6.021-.829s1.677-3.442 2.65-5.44z" fill-rule="nonzero"/></svg>
+          </div>
           </div>
           <h4>${dish.name}</h4>
           <div class="dish-footer">
