@@ -53,7 +53,7 @@
 }
 @media (max-width: 450px) {
   .head-title {
-    font-size: 3rem;
+    font-size: 3.4rem;
   }
   #rest-list {
     gap: 0;

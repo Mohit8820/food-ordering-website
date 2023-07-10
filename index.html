@@ -23,6 +23,8 @@
       crossorigin="anonymous"
     />
     <!---->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/queries.css" />
@@ -650,6 +652,9 @@
             <a href="#home" class="nav-link px-3 px-lg-4 sub-title">Home</a>
           </li>
           <li>
+            <a href="#about" class="nav-link px-3 px-lg-4 sub-title">About</a>
+          </li>
+          <li>
             <a
               class="nav-link px-3 px-lg-4 sub-title"
               data-bs-toggle="modal"
@@ -666,7 +671,6 @@
               >How It Works</a
             >
           </li>
-          <li><a href="#" class="nav-link px-3 px-lg-4 sub-title">About</a></li>
           <li>
             <a href="#contact" class="nav-link px-3 px-lg-4 sub-title"
               >Contact</a
@@ -762,7 +766,7 @@
               <div class="carousel-caption text-start mb-5">
                 <h1>Hungry?</h1>
                 <p>Order food from your favourite restaurants.</p>
-                <a class="" href="#"
+                <a class="" href="#about"
                   ><button class="primary-btn">Let's begin</button></a
                 >
               </div>
@@ -775,7 +779,7 @@
               <div class="carousel-caption mb-5">
                 <h1>Discover</h1>
                 <p>the best food & drinks</p>
-                <a class="" href="#"
+                <a class="" href="#menu"
                   ><button class="primary-btn">Explore</button></a
                 >
               </div>
@@ -788,7 +792,7 @@
               <div class="carousel-caption text-end mb-5">
                 <h1>Order Online</h1>
                 <p>Stay home and order to your doorstep</p>
-                <a class="" href="#"
+                <a class="" href="#menu"
                   ><button class="primary-btn">Order now</button></a
                 >
               </div>
@@ -815,8 +819,36 @@
         </button>
       </div>
     </main>
-    <section id="prev-sec">
-      <div class="heading">
+
+    <section id="about" class="row">
+      <div class="about-text" data-aos="fade-right">
+        <div class="heading">
+          <div class="sub-title">About</div>
+          <h3 class="head-title">Who we are</h3>
+          <div class="bottom-dots">
+            <span class="dot line-dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+        <div>
+          We are a food delivery service that connects you with the best local
+          restaurants in your area. Whether you’re craving pizza, sushi,
+          burgers, or anything in between, we’ve got you covered.
+        </div>
+        We partner with only the best restaurants that meet our high standards
+        of quality, hygiene, and taste.
+      </div>
+      <div class="about-vid" data-aos="fade-left">
+        <video autoplay>
+          <source src=".\img\about.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </section>
+
+    <section id="prev-sec" data-aos="fade-up">
+      <div class="heading text-center">
         <div class="sub-title">Previous orders</div>
         <h3 class="head-title">Repeat favourites</h3>
         <div class="bottom-dots">
@@ -861,7 +893,7 @@
       </button>
     </section>
     <section class="menu-sec" id="menu">
-      <div class="heading">
+      <div class="heading text-center" data-aos="fade-up">
         <div class="sub-title">Menu</div>
         <h3 class="head-title">Browse restaurants</h3>
         <div class="bottom-dots">
@@ -912,15 +944,16 @@
         placeholder="Search dish..."
         aria-label="Search"
         id="dish-search-box"
+        data-aos="fade-up"
       />
-      <div id="dish-list"></div>
+      <div id="dish-list" data-aos="fade-up"></div>
     </section>
 
     <section id="how">
       <div class="combo-banner">
-        <div class="heading">
+        <div class="heading" data-aos="fade-up">
           <div class="sub-title">How It Works</div>
-          <h3 class="head-title">Simple Process</h3>
+          <h3 class="head-title text-center">Simple Process</h3>
           <div class="bottom-dots">
             <span class="dot line-dot"></span>
             <span class="dot"></span>
@@ -930,28 +963,28 @@
         </div>
       </div>
       <div class="how-points-sec row m-auto">
-        <div class="how-point col">
-          <img src="img\how\checklist.png" alt="" />
-          <h3>Your Order</h3>
+        <div class="how-point col" data-aos="zoom-in-right">
+          <img src="img\how\select.gif" alt="" />
+          <h3>Browse Dishes</h3>
           <p>
-            Thank you for being valued customer. We are so grateful to serving
-            for the honored be clients pleasure of serving hope we meets.
+            Search your favourite dishes from the list of famous restaurants in
+            the menu section and add them to your cart.
           </p>
         </div>
-        <div class="how-point col">
-          <img src="img\how\pay.png" alt="" />
-          <h3>Your Order</h3>
+        <div class="how-point col" data-aos="zoom-in">
+          <img src="img\how\order.gif" alt="" />
+          <h3>Place Order</h3>
           <p>
-            Thank you for being valued customer. We are so grateful to serving
-            for the honored be clients pleasure of serving hope we meets.
+            After adding your favourite dishes to the cart, you can edit the
+            quantity of dishes in your cart and place your order.
           </p>
         </div>
-        <div class="how-point col">
-          <img src="img\how\box.png" alt="" />
-          <h3>Your Order</h3>
+        <div class="how-point col" data-aos="zoom-in-left">
+          <img src="img\how\pay.gif" alt="" />
+          <h3>Cash On Delivery</h3>
           <p>
-            Thank you for being valued customer. We are so grateful to serving
-            for the honored be clients pleasure of serving hope we meets.
+            Your order will be delivered within the given time and you can pay
+            with cash on delivery.
           </p>
         </div>
       </div>
@@ -1183,7 +1216,10 @@
         </div>
       </div>
     </footer>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, easing: "ease-in-out", offset: 100 });
+    </script>
     <script>
       let restContainer = document.getElementById("rest-list");
       var prevDishCont = document.getElementById("prev-dish-cont");

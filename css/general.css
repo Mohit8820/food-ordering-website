@@ -76,7 +76,7 @@ a {
 }
 section {
   margin: 0 auto;
-  padding-top: 8rem;
+  padding-top: 10rem;
 }
 button,
 input[type="submit"],
@@ -212,11 +212,10 @@ ul button {
 }
 .head-title {
   padding-top: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
   font-size: 4.2rem;
   font-weight: 700;
   text-transform: capitalize;
-  text-align: center;
   color: var(--text-color);
 }
 .sub-title {
@@ -240,13 +239,37 @@ ul button {
 .bottom-dots .dot.line-dot {
   border-right: 4rem solid var(--head-color);
 }
+/*****************************/
+#about {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 4rem;
+}
+.about-text {
+  max-width: 40rem;
+  line-height: 2.5rem;
+}
+.about-text .heading {
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+.about-vid {
+  max-width: 40rem;
+}
+.about-vid video {
+  width: 100%;
+}
+/**************************/
 .combo-banner {
   background: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.5) 0%,
       rgba(0, 0, 0, 0.5) 100%
     ),
-    url(/img/banners/banner-combo.jpg);
+    url("/img/banners/banner-combo.jpg");
   background-position: center;
   background-repeat: no-repeat;
   /* background-attachment: fixed; */
@@ -254,7 +277,6 @@ ul button {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
   height: 40rem;
   padding-top: 8rem;
   margin-bottom: -18rem;
@@ -276,8 +298,9 @@ ul button {
   min-width: 30rem;
 }
 .how-point img {
-  height: 8rem;
+  height: 12rem;
   margin-bottom: 2rem;
+  margin-top: -2rem;
 }
 /***************************/
 #prev-sec {
@@ -635,7 +658,7 @@ footer {
   object-position: center;
   height: 100%;
   width: 100%;
-  opacity: 0.15;
+  opacity: 0.1;
   z-index: -1;
 }
 .footer-content {
