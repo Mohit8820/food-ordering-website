@@ -74,7 +74,8 @@ a {
   color: inherit;
 }
 section {
-  margin: 10rem auto 0;
+  margin: 0 auto;
+  padding-top: 8rem;
 }
 button,
 input[type="submit"],
@@ -164,7 +165,7 @@ header {
   top: 0;
   left: 0;
   z-index: 9;
-  padding: 0.5rem 9vw;
+  padding: 1rem 9vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -597,6 +598,7 @@ tr {
 footer {
   position: relative;
   overflow: hidden;
+  padding: 8rem 2rem;
 }
 .footer-banner {
   position: absolute;
@@ -610,4 +612,5 @@ footer {
 }
 .footer-content {
   width: 80%;
+  margin: auto;
 }

@@ -16,6 +16,9 @@
   .menu-btn {
     display: inline-block;
   }
+  header {
+    padding: 0.5rem 9vw;
+  }
   header .main-logo {
     display: flex;
   }
