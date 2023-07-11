@@ -4,7 +4,7 @@
     "description": "A bucket of crispy fried chicken pieces with your choice of dips.",
     "price": 599,
     "rating": 4.5,
-    "image": "https://images.kfc.com.au/MenuItems/Chicken/Original-Recipe-Bucket-21-Pieces.png",
+    "image": "./img/dishes/Chicken Bucket.jpg",
     "restaurant": "kfc",
     "dishId": "khtrjjaw",
     "timeTaken": 38

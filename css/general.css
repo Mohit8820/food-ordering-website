@@ -256,10 +256,10 @@ ul button {
   align-items: flex-start;
   margin-bottom: 2rem;
 }
-.about-vid {
+.about-gif {
   max-width: 40rem;
 }
-.about-vid video {
+.about-gif img {
   width: 100%;
 }
 /**************************/
