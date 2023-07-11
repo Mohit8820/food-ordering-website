@@ -322,7 +322,7 @@ function loadPrevDishes() {
       prevDishCont.innerHTML += ` <div class="dish">
           <div class="dish-img">
             <img
-              src="${"img/gallery/gallery-" + ((i + 1) % 11)}.jpg"
+              src="${menu[0].image}"
               alt="dish-image"
             />
             <div class="rating">
@@ -340,9 +340,7 @@ function loadPrevDishes() {
           <h4>${dish.name}</h4>
           <div class="dish-footer">
             <div class="price">₹${dish.price}</div>
-            <button data-id="${
-              dish.dishId
-            }" onclick="addDish(event);" class="primary-btn">Add</button>
+            <button data-id="${dish.dishId}" onclick="addDish(event);" class="primary-btn">Add</button>
           </div>
         </div>`;
     });
@@ -395,4 +393,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   document.getElementById("cart-btn").addEventListener("click", loadCart);
   document.getElementById("checkout-btn").addEventListener("click", checkout);
   document.getElementById("confirm-btn").addEventListener("click", successFunc);
+  // var a = [];
+  // menu.forEach((d) => a.push(d.name));
+  // console.log(a);
 });
