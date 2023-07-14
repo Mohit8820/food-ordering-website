@@ -34,7 +34,7 @@ body {
   font-weight: 400;
   font-size: 1.6rem;
   color: var(--text-color);
-  cursor: url("/img/pizzaCursor24.png"), url("/img/pizzaCur.svg"), auto !important;
+  cursor: url("/img/pizzaCursor24.png"), auto;
 
   /* Only works if there is nothing absolutely positioned in relation to body */
   /* width: 100vw; */
