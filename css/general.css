@@ -25,6 +25,8 @@ html {
   overflow-x: hidden;
   font-size: 62.5%;
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -32,6 +34,7 @@ body {
   font-weight: 400;
   font-size: 1.6rem;
   color: var(--text-color);
+  cursor: url("/img/pizzaCursor24.png"), url("/img/pizzaCur.svg"), auto !important;
 
   /* Only works if there is nothing absolutely positioned in relation to body */
   /* width: 100vw; */
@@ -503,6 +506,7 @@ ul button {
   aspect-ratio: 1/1;
   overflow: hidden;
   padding: 0;
+  border-radius: 1rem;
 }
 .cart-dish-img img {
   object-fit: cover;

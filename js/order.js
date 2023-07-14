@@ -34,23 +34,23 @@ var filterMenu;
 
 let restaurantNames = [
   "all",
-  "kfc",
-  "haldiram",
-  "kaveri",
-  "dominos",
-  "pizza hut",
-  "barbeque nation",
-  "mcdonald's",
+  "kgf",
+  "namkeen's",
+  "rasoi",
+  "pizzanos",
+  "pizza shack",
+  "bbq zone",
+  "mcYummy",
 ];
 let restaurantImages = [
   "all.gif",
-  "kfc.avif",
-  "haldiram.png",
-  "kaveri.avif",
-  "dominos.avif",
-  "pizzahut.avif",
+  "kgf.jfif",
+  "namkeen's.png",
+  "rasoi.png",
+  "pizzanos.png",
+  "pizzashack.png",
   "bbq.png",
-  "McDonalds.png",
+  "McYummy.png",
 ];
 
 function filterDishes(i) {
@@ -75,10 +75,10 @@ function appendDishes(dishes) {
   dishContainer.innerHTML = "";
   dishes.forEach((dish, i) => {
     dishContainer.innerHTML += `
-      <div class="dish">
+      <div class="dish"  data-aos="zoom-in" data-aos-duration="500" data-aos-offset="-100000000">
         <div class="dish-img">
           <img
-            src="${"img/gallery/gallery-" + ((i + 1) % 11)}.jpg"
+            src="${dish.image}"
             alt="dish-image"
           />
           <div class="rating">
@@ -97,9 +97,7 @@ function appendDishes(dishes) {
         <p>${dish.description}</p>
         <div class="dish-footer">
           <div class="price">₹${dish.price}</div>
-          <button data-id="${
-            dish.dishId
-          }" onclick="addDish(event);" class="primary-btn">Add</button>
+          <button data-id="${dish.dishId}" onclick="addDish(event);" class="primary-btn">Add</button>
         </div>
       </div>`;
   });
@@ -194,7 +192,7 @@ function loadCart() {
       <div class="cart-dish">
       <div class="cart-dish-img">
         <img
-          src="https://www.dominos.co.in/files/items/Pepper_Barbeque.jpg"
+          src="${dish.image}"
           alt=""
         />
       </div>
@@ -322,7 +320,7 @@ function loadPrevDishes() {
       prevDishCont.innerHTML += ` <div class="dish">
           <div class="dish-img">
             <img
-              src="${menu[0].image}"
+              src="${dish.image}"
               alt="dish-image"
             />
             <div class="rating">
