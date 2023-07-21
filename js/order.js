@@ -44,13 +44,13 @@ let restaurantNames = [
 ];
 let restaurantImages = [
   "all.gif",
-  "kgf.jfif",
-  "namkeen's.png",
-  "rasoi.png",
-  "pizzanos.png",
-  "pizzashack.png",
-  "bbq.png",
-  "McYummy.png",
+  "kgf.webp",
+  "namkeen's.webp",
+  "rasoi.webp",
+  "pizzanos.webp",
+  "pizzashack.webp",
+  "bbq.webp",
+  "McYummy.webp",
 ];
 
 function filterDishes(i) {

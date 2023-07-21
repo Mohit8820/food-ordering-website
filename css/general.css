@@ -272,7 +272,7 @@ ul button {
       rgba(0, 0, 0, 0.5) 0%,
       rgba(0, 0, 0, 0.5) 100%
     ),
-    url("/img/banners/banner-combo.jpg");
+    url("/img/banners/banner-combo.webp");
   background-position: center;
   background-repeat: no-repeat;
   /* background-attachment: fixed; */
@@ -413,6 +413,7 @@ ul button {
   justify-content: center;
   gap: 2.5rem;
   background: #fff;
+  padding-bottom: 2rem;
 }
 .dish {
   width: 30rem;
